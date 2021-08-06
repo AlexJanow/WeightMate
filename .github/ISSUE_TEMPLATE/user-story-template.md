@@ -13,7 +13,7 @@ I want to <perform some task>
 
 so that I can <achieve some goal>
 
-_________________
+##Description
 
 ##Acceptance criteria
 
@@ -23,7 +23,7 @@ When <some action is carried out>
 
 Then <a set of observable outcomes should occur>
 
-##Tasks
-
-
 ##Complexity
+
+
+##Tasks
