@@ -13,9 +13,9 @@ I want to <perform some task>
 
 so that I can <achieve some goal>
 
-##Description
+## Description
 
-##Acceptance criteria
+## Acceptance criteria
 
 Given <some context>
 
@@ -23,7 +23,7 @@ When <some action is carried out>
 
 Then <a set of observable outcomes should occur>
 
-##Complexity
+## Complexity
 
 
-##Tasks
+## Tasks
