@@ -3,7 +3,7 @@ import Bodyweight from "../pages/Bodyweight";
 import Training from "../pages/Training";
 import Logbook from "../pages/Logbook";
 import { Switch, Route } from "react-router";
-
+import "./Main.css";
 export default function Main() {
   return (
     <main>
