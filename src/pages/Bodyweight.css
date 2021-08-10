@@ -1,0 +1,17 @@
+.bodyweight__container {
+  background-color: #2e2e33;
+  border-radius: 3%;
+  border: 2px solid black;
+  width: 300px;
+  height: 200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.bodyweight__date {
+  color: whitesmoke;
+}
+#bodyweight__input {
+  width: 4rem;
+}
