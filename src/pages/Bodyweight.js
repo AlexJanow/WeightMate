@@ -8,7 +8,7 @@ export default function Bodyweight() {
   const date = dayjs().format("DD/MM/YYYY");
   const result = localStorage.getItem(date);
   const results = { ...localStorage };
-  console.log(results);
+
   return (
     <div>
       <h1>Bodyweight</h1>

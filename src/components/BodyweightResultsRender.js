@@ -2,10 +2,10 @@ import "./BodyweightResultsRender.css";
 
 export default function BodyweightResultsRender() {
   const items = { ...localStorage };
-  console.log(items);
-  return Object.entries(items).map(([key, value]) => {
+
+  return Object.entries(items).map(([key, value], index) => {
     return (
-      <li className="bodyweight__results-render-li">
+      <li key={index} className="bodyweight__results-render-li">
         {key} - {JSON.parse(value)} kg
       </li>
     );
