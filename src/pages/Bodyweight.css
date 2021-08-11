@@ -1,7 +1,5 @@
 .bodyweight__container {
   background-color: #2e2e33;
-  border-radius: 3%;
-  border: 2px solid black;
 
   height: 100px;
   margin: auto;
@@ -11,8 +9,6 @@
 
 .bodyweight__data-container {
   background-color: #2e2e33;
-  border-radius: 3%;
-  border: 2px solid black;
 
   height: auto;
   margin: auto;

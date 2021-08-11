@@ -11,7 +11,6 @@ export default function Bodyweight() {
 
   return (
     <div>
-      <h1>Bodyweight</h1>
       <ChartBodyweight />
       <div className="bodyweight__container">
         <div className="bodyweight__date">
