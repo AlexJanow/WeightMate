@@ -4,7 +4,7 @@ export default function BodyweightForm() {
   const date = dayjs().format("DD/MM/YYYY");
 
   const [bodyweight, setBodyweight] = useState(() => {
-    const saved = localStorage.getItem("bodyweight");
+    const saved = localStorage.getItem(date);
     const initialValue = JSON.parse(saved);
     return initialValue || "";
   });
