@@ -1,0 +1,10 @@
+.training__exercise-form {
+  background-color: #2e2e33;
+  color: whitesmoke;
+}
+
+.training__exercise-form input,
+textarea {
+  border-radius: 5px;
+  height: 2rem;
+}
