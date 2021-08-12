@@ -1,10 +1,67 @@
 .training__exercise-form {
   background-color: #2e2e33;
   color: whitesmoke;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  justify-items: center;
 }
 
 .training__exercise-form input,
 textarea {
   border-radius: 5px;
   height: 2rem;
+}
+.training__exercise-input {
+  grid-column-start: 2;
+  grid-column-end: 5;
+  width: 60vw;
+}
+
+.training__weight-input {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 2;
+}
+
+.training__weight-button {
+  all: unset;
+  background-color: whitesmoke;
+  color: #2e2e33;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 3px;
+
+  border-radius: 18px;
+  font-size: 2rem;
+
+  grid-column-start: 4;
+  grid-column-end: 5;
+  grid-row-start: 2;
+  grid-row-end: 2;
+}
+
+.training__repetitions-input {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 3;
+  grid-row-end: 3;
+}
+
+.training__repititions-button {
+  all: unset;
+  background-color: whitesmoke;
+  color: #2e2e33;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 3px;
+
+  border-radius: 18px;
+  font-size: 2rem;
+
+  grid-column-start: 4;
+  grid-column-end: 5;
+  grid-row-start: 3;
+  grid-row-end: 3;
 }
