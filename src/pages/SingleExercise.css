@@ -1,0 +1,20 @@
+.singleExercise__wrapper {
+  display: grid;
+  background-color: #2e2e33;
+  color: whitesmoke;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+
+.singleExercise__name {
+  padding-top: 1rem;
+}
+
+.singleExercise__description {
+  padding: 10px;
+}
+
+.singleExercise__variations li {
+  list-style: none;
+  padding: 5px;
+}
