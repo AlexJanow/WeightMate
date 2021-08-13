@@ -8,11 +8,10 @@ export default function SingleExercise() {
   const [img, setImg] = useState("");
   const { exerciseId } = useParams();
   useEffect(() => {
-    const url = `https://wger.de/api/v2/exercise/${exerciseId}`;
+    const url = `https://wger.de/api/v2/exerciseinfo/${exerciseId}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setInfo(data);
       });
   }, [exerciseId]);
@@ -26,10 +25,16 @@ export default function SingleExercise() {
 
   //   const descr = info.description;
   //   const descrResult = info.replace(/(<([^>]+)>)/gi, "");
+  console.log(info);
+
   return (
     <div className="singleExercise__wrapper">
       <div className="singleExercise__name">
         <h1>{info.name}</h1>
+      </div>
+      <div className="singleExercise__img">
+        <img src={info?.images ? info?.images[0]?.image : null} />
+        <img src={info?.images ? info?.images[1]?.image : null} />
       </div>
       <div className="singleExercise__description">
         {/* {info.id} */}
@@ -41,10 +46,9 @@ export default function SingleExercise() {
         <ol>
           {" "}
           {info &&
-            info.variations.map((e) => {
-              console.log(e);
+            info.variations.map((e, index) => {
               return (
-                <li>
+                <li key={index}>
                   <Link className="Link" to={`/training/${e}`}>
                     {e}
                   </Link>
