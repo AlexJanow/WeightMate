@@ -69,3 +69,14 @@ textarea {
   grid-row-start: 3;
   grid-row-end: 3;
 }
+
+.Link {
+  all: unset;
+}
+
+.training__result-li {
+  list-style: none;
+  border: 1px solid whitesmoke;
+  padding: 5px;
+  margin: 5px;
+}
