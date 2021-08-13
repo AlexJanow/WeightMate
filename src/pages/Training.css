@@ -1,14 +1,16 @@
 .training__exercise-form {
   background-color: #2e2e33;
   color: whitesmoke;
+
+  padding: 10px;
+}
+.training__wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
   justify-items: center;
-  padding: 10px;
   row-gap: 5px;
 }
-
 .training__exercise-form input,
 textarea {
   border-radius: 5px;
