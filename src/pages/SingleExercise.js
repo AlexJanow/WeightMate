@@ -7,6 +7,7 @@ export default function SingleExercise() {
   const [info, setInfo] = useState("");
   const [img, setImg] = useState("");
   const { exerciseId } = useParams();
+
   useEffect(() => {
     const url = `https://wger.de/api/v2/exerciseinfo/${exerciseId}`;
     fetch(url)
@@ -33,8 +34,14 @@ export default function SingleExercise() {
         <h1>{info.name}</h1>
       </div>
       <div className="singleExercise__img">
-        <img src={info?.images ? info?.images[0]?.image : null} />
-        <img src={info?.images ? info?.images[1]?.image : null} />
+        <img
+          src={info?.images ? info?.images[0]?.image : null}
+          alt={`${info.name} movement 1`}
+        />
+        <img
+          src={info?.images ? info?.images[1]?.image : null}
+          alt={`${info.name} movement 2`}
+        />
       </div>
       <div className="singleExercise__description">
         {/* {info.id} */}
@@ -44,9 +51,13 @@ export default function SingleExercise() {
       <div className="singleExercise__variations">
         Variations:
         <ol>
-          {" "}
           {info &&
             info.variations.map((e, index) => {
+              //   fetch(`https://wger.de/api/v2/exerciseinfo/${e}`).then((res) =>
+              //     res.json().then((dat) => {
+
+              //     })
+              //   );
               return (
                 <li key={index}>
                   <Link className="Link" to={`/training/${e}`}>
@@ -59,10 +70,4 @@ export default function SingleExercise() {
       </div>
     </div>
   );
-}
-
-{
-  /* <Link className="Link" to={`/training/${exercise.data.id}`}>
-{exercise.value}
-</Link> */
 }
