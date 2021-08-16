@@ -26,7 +26,9 @@ export default function BodyweightForm() {
         value={bodyweight}
         onChange={(e) => setBodyweight(e.target.value)}
       />
-      <button type="submit">+</button>
+      <button className="bodyweight__button" type="submit">
+        +
+      </button>
     </form>
   );
 }

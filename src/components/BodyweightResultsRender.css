@@ -2,3 +2,20 @@
   list-style: none;
   color: whitesmoke;
 }
+
+#bodyweight__input {
+  border-radius: 5px;
+  height: 2rem;
+}
+
+.bodyweight__button {
+  all: unset;
+  background-color: whitesmoke;
+  color: #2e2e33;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 3px;
+
+  border-radius: 18px;
+  font-size: 2rem;
+}
