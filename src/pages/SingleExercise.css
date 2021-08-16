@@ -22,3 +22,7 @@
 .singleExercise__img img {
   width: 150px;
 }
+.singleExercise__li :hover {
+  font-weight: 900;
+  text-decoration: underline whitesmoke;
+}

@@ -36,11 +36,11 @@ export default function SingleExercise() {
       <div className="singleExercise__img">
         <img
           src={info?.images ? info?.images[0]?.image : null}
-          alt={`${info.name} movement 1`}
+          // alt={`${info.name} movement 1`}
         />
         <img
           src={info?.images ? info?.images[1]?.image : null}
-          alt={`${info.name} movement 2`}
+          // alt={`${info.name} movement 2`}
         />
       </div>
       <div className="singleExercise__description">
@@ -59,7 +59,7 @@ export default function SingleExercise() {
               //     })
               //   );
               return (
-                <li key={index}>
+                <li className="singleExercise__li" key={index}>
                   <Link className="Link" to={`/training/${e}`}>
                     {e}
                   </Link>
