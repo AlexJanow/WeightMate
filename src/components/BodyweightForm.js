@@ -18,7 +18,7 @@ export default function BodyweightForm() {
       <label htmlFor="bodyweight__input">Bodyweight in kg</label>
       <input
         type="number"
-        id="bodyweight__input"
+        className="bodyweight__input"
         name="bodyweight__input"
         required
         width="200"

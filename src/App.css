@@ -4,7 +4,7 @@
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: auto;
-  background: linear-gradient(#0b5643, #fff);
+  background: linear-gradient(var(--tertiaryColor), var(--secondary));
 }
 
 .main {

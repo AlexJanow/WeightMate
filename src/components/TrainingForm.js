@@ -1,29 +1,21 @@
 import { data } from "browserslist";
 import React from "react";
 import { useState, useEffect } from "react";
-import TrainingRenderExercise from "./TrainingRenderExercise";
-
+import { Link } from "react-router-dom";
 export default function TrainingForm() {
   const [search, setSearch] = useState("");
-
   const [result, setResult] = useState("");
-
+  const suggestions = result.suggestions;
   const url = `https://wger.de/api/v2/exercise/search/?term=${search}`;
 
   useEffect(() => {
-    let isMounted = true;
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
-        if (isMounted) setResult(data);
+        setResult(data);
       });
-    return () => {
-      isMounted = false;
-    };
   }, [search]);
-  if (result !== "") {
-    // console.log(result?.suggestions);
-  }
+
   return (
     <div className="training__exercise-form">
       {/* <form> */}
@@ -36,7 +28,7 @@ export default function TrainingForm() {
           placeholder="search for exercise..."
           required
           onChange={(e) => setSearch(e.target.value)}
-          value={search && search}
+          value={search}
         />
         {/* <label htmlFor="weight">weight</label> */}
         <input
@@ -59,7 +51,17 @@ export default function TrainingForm() {
         {/* </form> */}
       </div>
       <ul>
-        <TrainingRenderExercise result={result} />
+        {suggestions
+          ? suggestions.map((exercise) => {
+              return (
+                <li className="training__result-li" key={exercise.data.id}>
+                  <Link className="Link" to={`/training/${exercise.data.id}`}>
+                    {exercise.value}
+                  </Link>
+                </li>
+              );
+            })
+          : null}
       </ul>
     </div>
   );

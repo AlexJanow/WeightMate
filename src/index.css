@@ -19,3 +19,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.App {
+  --primary: whitesmoke;
+  --secondary: #2e2e33;
+  --primaryBackground: #2e2e33;
+  --secondaryBackground: whitesmoke;
+
+  --tertiaryColor: #0b5643;
+}

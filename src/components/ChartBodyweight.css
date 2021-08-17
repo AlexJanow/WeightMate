@@ -1,3 +1,3 @@
 .chart__bodyweight {
-  background-color: #2e2e33;
+  background-color: var(--primaryBackground);
 }

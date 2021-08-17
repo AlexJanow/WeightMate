@@ -1,13 +1,13 @@
 .training__exercise-form {
-  background-color: #2e2e33;
-  color: whitesmoke;
+  background-color: var(--primaryBackground);
+  color: var(--primary);
 
   padding: 10px;
 }
 .training__wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
   justify-items: center;
   row-gap: 5px;
 }
@@ -31,8 +31,8 @@ textarea {
 
 .training__weight-button {
   all: unset;
-  background-color: whitesmoke;
-  color: #2e2e33;
+  background-color: var(--secondaryBackground);
+  color: var(--secondary);
   padding-left: 1rem;
   padding-right: 1rem;
   padding-bottom: 3px;
@@ -55,8 +55,8 @@ textarea {
 
 .training__repititions-button {
   all: unset;
-  background-color: whitesmoke;
-  color: #2e2e33;
+  background-color: var(--secondaryBackground);
+  color: var(--secondary);
   padding-left: 1rem;
   padding-right: 1rem;
   padding-bottom: 3px;
@@ -76,7 +76,7 @@ textarea {
 
 .training__result-li {
   list-style: none;
-  border: 1px solid whitesmoke;
+  border: 1px solid var(--primary);
   padding: 5px;
   margin: 5px;
 }
