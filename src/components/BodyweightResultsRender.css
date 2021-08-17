@@ -1,4 +1,21 @@
 .bodyweight__results-render-li {
   list-style: none;
-  color: whitesmoke;
+  color: var(--primary);
+}
+
+.bodyweight__input {
+  border-radius: 5px;
+  height: 2rem;
+}
+
+.bodyweight__button {
+  all: unset;
+  background-color: var(--secondaryBackground);
+  color: var(--secondary);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 3px;
+
+  border-radius: 18px;
+  font-size: 2rem;
 }

@@ -1,5 +1,5 @@
 .bodyweight__container {
-  background-color: #2e2e33;
+  background-color: var(--primaryBackground);
 
   height: 100px;
   margin: auto;
@@ -8,7 +8,7 @@
 }
 
 .bodyweight__data-container {
-  background-color: #2e2e33;
+  background-color: var(--primaryBackground);
 
   height: auto;
   margin: auto;
@@ -17,7 +17,7 @@
 }
 
 .bodyweight__date {
-  color: whitesmoke;
+  color: var(--primary);
 }
 #bodyweight__input {
   width: 4rem;

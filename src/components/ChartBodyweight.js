@@ -10,7 +10,6 @@ export default function ChartBodyweight() {
     JSON.parse(value)
   );
 
-  console.log(items);
   const labels = dates;
   const data = {
     labels: labels,
