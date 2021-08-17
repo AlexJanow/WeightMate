@@ -6,8 +6,6 @@ import ChartBodyweight from "../components/ChartBodyweight";
 
 export default function Bodyweight() {
   const date = dayjs().format("DD/MM/YYYY");
-  const result = localStorage.getItem(date);
-  const results = { ...localStorage };
 
   return (
     <div>

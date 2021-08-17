@@ -1,12 +1,12 @@
 .singleExercise__wrapper {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   background-color: var(--primaryBackground);
   color: var(--primary);
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
+  height: fit-content;
 }
 
 .singleExercise__name {

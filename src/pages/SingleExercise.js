@@ -9,14 +9,14 @@ import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { makeStyles } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
+
 import "./SingleExercise.css";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: "80%",
+    width: "80vw",
   },
   heading: {
-    width: "100%",
     margin: "auto",
   },
 }));
@@ -50,7 +50,7 @@ export default function SingleExercise() {
       </div>
       <div className="singleExercise__accordion">
         <Box display="flex" justifyContent="center" alignItems="center">
-          <Accordion className={classes.root} justify="center">
+          <Accordion className={classes.root}>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
               aria-controls="panel1a-content"
@@ -61,29 +61,43 @@ export default function SingleExercise() {
             </AccordionSummary>
             <AccordionDetails>
               <Typography>
-                <div className="singleExercise__description">
+                {/* <div className="singleExercise__description"> */}
+                {exerciseData &&
+                  exerciseData.description.replace(/(<([^>]+)>)/gi, "")}
+                {/* </div> */}
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+        </Box>
+
+        <Box display="flex" justifyContent="center" alignItems="center">
+          <Accordion className={classes.root}>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel1a-content"
+              id="panel1a-header"
+            >
+              {" "}
+              <Typography className={classes.heading}>Variations</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography className={classes.heading}>
+                <div className="singleExercise__variations">
                   {exerciseData &&
-                    exerciseData.description.replace(/(<([^>]+)>)/gi, "")}
+                    exerciseData.variations.map((exercise, index) => {
+                      return (
+                        <li className="singleExercise__li" key={index}>
+                          <Link className="Link" to={`/training/${exercise}`}>
+                            {exercise}
+                          </Link>
+                        </li>
+                      );
+                    })}
                 </div>
               </Typography>
             </AccordionDetails>
           </Accordion>
         </Box>
-      </div>
-      <div className="singleExercise__variations">
-        Variations:
-        <ol>
-          {exerciseData &&
-            exerciseData.variations.map((exercise, index) => {
-              return (
-                <li className="singleExercise__li" key={index}>
-                  <Link className="Link" to={`/training/${exercise}`}>
-                    {exercise}
-                  </Link>
-                </li>
-              );
-            })}
-        </ol>
       </div>
     </div>
   );

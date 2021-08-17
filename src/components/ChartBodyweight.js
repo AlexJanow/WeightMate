@@ -1,6 +1,5 @@
 import { Line } from "react-chartjs-2";
 import "./ChartBodyweight.css";
-import dayjs from "dayjs";
 
 export default function ChartBodyweight() {
   const items = { ...localStorage };
