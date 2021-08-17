@@ -1,5 +1,8 @@
 .singleExercise__wrapper {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: var(--primaryBackground);
   color: var(--primary);
   grid-template-columns: 1fr;
@@ -25,4 +28,9 @@
 .singleExercise__li :hover {
   font-weight: 900;
   text-decoration: underline var(--primary);
+}
+
+.singleExercise__accordion {
+  margin-left: 0;
+  margin-right: 0;
 }
