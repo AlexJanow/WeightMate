@@ -19,7 +19,6 @@ export default function Main() {
         <Route path="/training">
           <Training />
         </Route>
-
         <Route path="/logbook">
           <Logbook />
         </Route>

@@ -30,23 +30,7 @@ export default function TrainingForm() {
           value={search}
         />
         {/* <label htmlFor="weight">weight</label> */}
-        <input
-          className="training__weight-input"
-          type="number"
-          name="weight"
-          placeholder="weight in kg"
-          required
-        />
-        <button className="training__weight-button">+</button>
-        {/* <label htmlFor="repetitions">repetitions</label> */}
-        <input
-          className="training__repetitions-input"
-          type="number"
-          name="repetitions"
-          placeholder="repetitions"
-          required
-        />
-        <button className="training__repititions-button">+</button>
+
         {/* </form> */}
       </div>
       <ul>

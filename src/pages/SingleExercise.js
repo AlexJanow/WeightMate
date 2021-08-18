@@ -5,6 +5,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import SingleExerciseAccordion from "../components/SingleExerciseAccordion";
 
 import "./SingleExercise.css";
+import TrainingInputForm from "../components/TrainingInputForm";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -58,6 +59,7 @@ export default function SingleExercise() {
       <button onClick={handleToggle} className="singleExercise__button-train">
         {!isActive ? "show info" : "train exercise"}
       </button>
+      {!isActive && <TrainingInputForm />}
     </div>
   );
 }
