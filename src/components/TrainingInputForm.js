@@ -31,9 +31,6 @@ export default function TrainingInputForm({
         required
       />
 
-      {/* //Maybe only one button is needed
-       <button className="training__weight-button">+</button> */}
-
       <input
         onChange={(e) =>
           setTrainingData({ ...trainingData, repetitions: e.target.value })

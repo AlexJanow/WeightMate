@@ -3,9 +3,16 @@
   color: var(--primary);
 }
 
+.bodyweight__form-wrapper {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+}
+
 .bodyweight__input {
   border-radius: 5px;
-  height: 2rem;
+  height: 2.6rem;
+  grid-column-start: 3;
 }
 
 .bodyweight__button {
@@ -16,6 +23,6 @@
   padding-right: 1rem;
   padding-bottom: 3px;
 
-  border-radius: 18px;
+  border-radius: 5px;
   font-size: 2rem;
 }
