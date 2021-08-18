@@ -29,7 +29,6 @@ export default function TrainingForm() {
           onChange={(e) => setSearch(e.target.value)}
           value={search}
         />
-        {/* <label htmlFor="weight">weight</label> */}
 
         {/* </form> */}
       </div>

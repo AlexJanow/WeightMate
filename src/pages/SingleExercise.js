@@ -22,6 +22,13 @@ export default function SingleExercise() {
   const [isActive, setIsActive] = useState("false");
   const { exerciseId } = useParams();
 
+  const [sets, setSets] = useState([]);
+  const [trainingData, setTrainingData] = useState({
+    Id: exerciseId,
+    weight: "",
+    repetitions: "",
+  });
+
   useEffect(() => {
     const url = `https://wger.de/api/v2/exerciseinfo/${exerciseId}`;
     fetch(url)
@@ -59,7 +66,19 @@ export default function SingleExercise() {
       <button onClick={handleToggle} className="singleExercise__button-train">
         {!isActive ? "show info" : "train exercise"}
       </button>
-      {!isActive && <TrainingInputForm />}
+      {!isActive && (
+        <TrainingInputForm
+          sets={sets}
+          setSets={setSets}
+          setTrainingData={setTrainingData}
+          trainingData={trainingData}
+          exerciseId={exerciseId}
+        />
+      )}
+      <div className="singleExercise__trainingInputForm-display">
+        {/* <p>{trainingData.weight}</p>
+        <p>{trainingData.repetitions}</p> */}
+      </div>
     </div>
   );
 }

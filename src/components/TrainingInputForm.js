@@ -1,19 +1,20 @@
 import React from "react";
 import "./TrainingInputForm.css";
-import { useState } from "react";
-import { useParams } from "react-router";
-export default function TrainingInputForm() {
-  const { exerciseId } = useParams();
 
-  const [trainingData, setTrainingData] = useState({
-    Id: exerciseId,
-    weight: "",
-    repetitions: "",
-  });
+export default function TrainingInputForm({
+  sets,
+  setSets,
+  setTrainingData,
+  trainingData,
+}) {
   const handleSubmit = (e) => {
     e.preventDefault();
+    handleAdd(e.target.value);
 
-    console.log(trainingData);
+    console.log(sets);
+  };
+  const handleAdd = () => {
+    setSets((sets) => [...sets, trainingData]);
   };
 
   return (
