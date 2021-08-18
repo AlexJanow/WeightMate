@@ -14,7 +14,8 @@ import "./SingleExercise.css";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: "80vw",
+    width: "80%",
+    margin: "1%",
   },
   heading: {
     margin: "auto",
@@ -56,7 +57,6 @@ export default function SingleExercise() {
               aria-controls="panel1a-content"
               id="panel1a-header"
             >
-              {" "}
               <Typography className={classes.heading}>Description</Typography>
             </AccordionSummary>
             <AccordionDetails>
@@ -77,7 +77,6 @@ export default function SingleExercise() {
               aria-controls="panel1a-content"
               id="panel1a-header"
             >
-              {" "}
               <Typography className={classes.heading}>Variations</Typography>
             </AccordionSummary>
             <AccordionDetails>
@@ -98,6 +97,7 @@ export default function SingleExercise() {
             </AccordionDetails>
           </Accordion>
         </Box>
+        <button className="singleExercise__button-train">train exercise</button>
       </div>
     </div>
   );
