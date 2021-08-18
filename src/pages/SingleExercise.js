@@ -75,10 +75,17 @@ export default function SingleExercise() {
           exerciseId={exerciseId}
         />
       )}
-      <div className="singleExercise__trainingInputForm-display">
-        {/* <p>{trainingData.weight}</p>
-        <p>{trainingData.repetitions}</p> */}
-      </div>
+      {!isActive && (
+        <ol className="singleExercise__trainingInputForm-display">
+          {sets.map((set) => {
+            return (
+              <li className="singleExercise__trainingInputForm-display-li">
+                {set.weight} kg {set.repetitions} x
+              </li>
+            );
+          })}
+        </ol>
+      )}
     </div>
   );
 }
