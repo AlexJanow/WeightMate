@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 export default function TrainingForm() {
   const [search, setSearch] = useState("");
   const [result, setResult] = useState("");
+  // const [selected, setSelected] = useState("")
   const suggestions = result.suggestions;
   const url = `https://wger.de/api/v2/exercise/search/?term=${search}`;
 
@@ -19,7 +20,7 @@ export default function TrainingForm() {
     <div className="training__exercise-form">
       {/* <form> */}
       <div className="training__wrapper">
-        {/* <label htmlFor="exercise">exercise</label> */}
+        {/* <label htmlFor="exercise">Search for exercise</label> */}
         <input
           className="training__exercise-input"
           type="text"
@@ -29,8 +30,16 @@ export default function TrainingForm() {
           onChange={(e) => setSearch(e.target.value)}
           value={search}
         />
-
-        {/* </form> */}
+        {/* </form> */}{" "}
+        {/* <select className="training__exercise-select">
+          <option value="Arms">Arms</option>
+          <option value="Legs">Legs</option>
+          <option value="Abs">Abs</option>
+          <option value="Chest">Chest</option>
+          <option value="Back">Back</option>
+          <option value="Shoulders">Shoulders</option>
+          <option value="Calves">Calves</option>
+        </select> */}
       </div>
       <ul>
         {suggestions

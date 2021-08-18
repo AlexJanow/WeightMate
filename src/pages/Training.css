@@ -14,12 +14,19 @@
 .training__exercise-form input,
 textarea {
   border-radius: 5px;
-  height: 2rem;
+  height: 2.6rem;
 }
 .training__exercise-input {
   grid-column-start: 2;
   grid-column-end: 5;
+  grid-row-start: 2;
   width: 60vw;
+}
+
+.training__exercise-select {
+  grid-column-start: 3;
+  grid-column-end: 3;
+  grid-row-start: 3;
 }
 
 .Link {
