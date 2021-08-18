@@ -39,17 +39,24 @@ export default function SingleExercise() {
       <div className="singleExercise__name">
         <h2>{exerciseData.name}</h2>
       </div>
-      <div className="singleExercise__img">
-        <img
-          src={exerciseData?.images ? exerciseData?.images[0]?.image : null}
+      {isActive && (
+        <div className="singleExercise__img">
+          <img
+            src={exerciseData?.images ? exerciseData?.images[0]?.image : null}
+          />
+          <img
+            src={exerciseData?.images ? exerciseData?.images[1]?.image : null}
+          />
+        </div>
+      )}
+      {isActive && (
+        <SingleExerciseAccordion
+          classes={classes}
+          exerciseData={exerciseData}
         />
-        <img
-          src={exerciseData?.images ? exerciseData?.images[1]?.image : null}
-        />
-      </div>
-      <SingleExerciseAccordion classes={classes} exerciseData={exerciseData} />
+      )}
       <button onClick={handleToggle} className="singleExercise__button-train">
-        train exercise
+        {!isActive ? "show info" : "train exercise"}
       </button>
     </div>
   );
