@@ -16,13 +16,11 @@
   padding: 10px;
 }
 
-.singleExercise__variations li {
-  list-style: none;
-  padding: 5px;
-}
-
 .singleExercise__img img {
   width: 150px;
+}
+.singleExercise__li {
+  list-style: none;
 }
 .singleExercise__li :hover {
   font-weight: 900;

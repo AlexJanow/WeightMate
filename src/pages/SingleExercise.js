@@ -3,7 +3,7 @@ import { useParams } from "react-router";
 import { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import SingleExerciseAccordion from "../components/SingleExerciseAccordion";
-
+import { v4 as uuidv4 } from "uuid";
 import "./SingleExercise.css";
 import TrainingInputForm from "../components/TrainingInputForm";
 
@@ -77,9 +77,12 @@ export default function SingleExercise() {
       )}
       {!isActive && (
         <ol className="singleExercise__trainingInputForm-display">
-          {sets.map((set) => {
+          {sets.map((set, index) => {
             return (
-              <li className="singleExercise__trainingInputForm-display-li">
+              <li
+                key={uuidv4()}
+                className="singleExercise__trainingInputForm-display-li"
+              >
                 {set.weight} kg {set.repetitions} x
               </li>
             );

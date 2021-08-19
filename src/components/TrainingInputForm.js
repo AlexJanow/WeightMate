@@ -10,8 +10,6 @@ export default function TrainingInputForm({
   const handleSubmit = (e) => {
     e.preventDefault();
     handleAdd(e.target.value);
-
-    console.log(sets);
   };
   const handleAdd = () => {
     setSets((sets) => [...sets, trainingData]);

@@ -39,18 +39,16 @@ export default function SingleExerciseAccordion({ classes, exerciseData }) {
           </AccordionSummary>
           <AccordionDetails>
             <Typography className={classes.heading}>
-              <div className="singleExercise__variations">
-                {exerciseData &&
-                  exerciseData.variations.map((exercise, index) => {
-                    return (
-                      <li className="singleExercise__li" key={index}>
-                        <Link className="Link" to={`/training/${exercise}`}>
-                          {exercise}
-                        </Link>
-                      </li>
-                    );
-                  })}
-              </div>
+              {exerciseData &&
+                exerciseData.variations.map((exercise, index) => {
+                  return (
+                    <li className="singleExercise__li" key={index}>
+                      <Link className="Link" to={`/training/${exercise}`}>
+                        {exercise}
+                      </Link>
+                    </li>
+                  );
+                })}
             </Typography>
           </AccordionDetails>
         </Accordion>
