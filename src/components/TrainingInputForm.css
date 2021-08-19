@@ -1,21 +1,25 @@
-.bodyweight__results-render-li {
-  list-style: none;
-  color: var(--primary);
-}
-
-.bodyweight__form-wrapper {
+.trainingInputForm__wrapper {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(5, 1fr);
+  grid-gap: 1%;
 }
 
-.bodyweight__input {
-  border-radius: 5px;
+.training__weight-input {
   height: 2.6rem;
   grid-column-start: 3;
+
+  grid-row-start: 2;
 }
 
-.bodyweight__button {
+.training__repetitions-input {
+  height: 2.6rem;
+  grid-column-start: 3;
+
+  grid-row-start: 3;
+}
+
+.training__repititions-button {
   all: unset;
   background-color: var(--secondaryBackground);
   color: var(--secondary);
@@ -25,4 +29,9 @@
 
   border-radius: 5px;
   font-size: 2rem;
+
+  grid-column-start: 4;
+  grid-column-end: 5;
+  grid-row-start: 2;
+  grid-row-end: 4;
 }

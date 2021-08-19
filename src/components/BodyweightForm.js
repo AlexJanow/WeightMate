@@ -14,15 +14,17 @@ export default function BodyweightForm() {
   }, [bodyweight]);
 
   return (
-    <form>
-      <label htmlFor="bodyweight__input">Bodyweight in kg</label>
+    <form className="bodyweight__form-wrapper">
+      {/* <label htmlFor="bodyweight__input">Bodyweight in kg</label> */}
       <input
         type="number"
+        min="0.1"
+        step="0.1"
         className="bodyweight__input"
         name="bodyweight__input"
         required
         width="200"
-        placeholder="...kg"
+        placeholder="bodyweigh in kg"
         value={bodyweight}
         onChange={(e) => setBodyweight(e.target.value)}
       />

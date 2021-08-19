@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 export default function TrainingForm() {
   const [search, setSearch] = useState("");
   const [result, setResult] = useState("");
+  // const [selected, setSelected] = useState("")
   const suggestions = result.suggestions;
   const url = `https://wger.de/api/v2/exercise/search/?term=${search}`;
 
@@ -19,7 +20,7 @@ export default function TrainingForm() {
     <div className="training__exercise-form">
       {/* <form> */}
       <div className="training__wrapper">
-        {/* <label htmlFor="exercise">exercise</label> */}
+        {/* <label htmlFor="exercise">Search for exercise</label> */}
         <input
           className="training__exercise-input"
           type="text"
@@ -29,25 +30,16 @@ export default function TrainingForm() {
           onChange={(e) => setSearch(e.target.value)}
           value={search}
         />
-        {/* <label htmlFor="weight">weight</label> */}
-        <input
-          className="training__weight-input"
-          type="number"
-          name="weight"
-          placeholder="weight in kg"
-          required
-        />
-        <button className="training__weight-button">+</button>
-        {/* <label htmlFor="repetitions">repetitions</label> */}
-        <input
-          className="training__repetitions-input"
-          type="number"
-          name="repetitions"
-          placeholder="repetitions"
-          required
-        />
-        <button className="training__repititions-button">+</button>
-        {/* </form> */}
+        {/* </form> */}{" "}
+        {/* <select className="training__exercise-select">
+          <option value="Arms">Arms</option>
+          <option value="Legs">Legs</option>
+          <option value="Abs">Abs</option>
+          <option value="Chest">Chest</option>
+          <option value="Back">Back</option>
+          <option value="Shoulders">Shoulders</option>
+          <option value="Calves">Calves</option>
+        </select> */}
       </div>
       <ul>
         {suggestions

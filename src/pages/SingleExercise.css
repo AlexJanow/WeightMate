@@ -4,8 +4,7 @@
   align-items: center;
   background-color: var(--primaryBackground);
   color: var(--primary);
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
+
   height: fit-content;
 }
 
@@ -17,13 +16,11 @@
   padding: 10px;
 }
 
-.singleExercise__variations li {
-  list-style: none;
-  padding: 5px;
-}
-
 .singleExercise__img img {
   width: 150px;
+}
+.singleExercise__li {
+  list-style: none;
 }
 .singleExercise__li :hover {
   font-weight: 900;
@@ -33,4 +30,24 @@
 .singleExercise__accordion {
   margin-left: 0;
   margin-right: 0;
+}
+
+.singleExercise__button-train {
+  all: unset;
+  background-color: var(--secondaryBackground);
+  color: var(--secondary);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 3px;
+
+  border-radius: 5px;
+  font-size: 1.5rem;
+
+  margin: 5%;
+}
+
+.singleExercise__trainingInputForm-display-li {
+  padding-top: 5%;
+  padding-bottom: 5%;
+  font-size: 1.3rem;
 }
