@@ -1,19 +1,16 @@
 import { useState, useEffect } from "react";
 import dayjs from "dayjs";
 import { jsonSchema } from "uuidv4";
-export default function BodyweightForm() {
+import { SettingsOverscanOutlined } from "@material-ui/icons";
+export default function BodyweightForm({
+  bodyweightDataArray,
+  setBodyweightDataArray,
+}) {
   const date = dayjs().format("DD/MM/YYYY");
 
   const [bodyweightData, setBodyweightData] = useState({
     date,
     weight: "",
-  });
-  // const [bodyweightDataArray, setBodyweightDataArray] = useState([]);
-
-  const [bodyweightDataArray, setBodyweightDataArray] = useState(() => {
-    const saved = localStorage.getItem("bodyweightDataArray");
-    const initialValue = JSON.parse(saved);
-    return initialValue || [];
   });
 
   useEffect(() => {
@@ -37,7 +34,9 @@ export default function BodyweightForm() {
       bodyweightData,
     ]);
   };
-
+  const handleClick = () => {
+    window.location.reload();
+  };
   console.log(bodyweightDataArray);
   return (
     <form onSubmit={handleSubmit} className="bodyweight__form-wrapper">
@@ -55,7 +54,11 @@ export default function BodyweightForm() {
           setBodyweightData({ ...bodyweightData, weight: e.target.value })
         }
       />
-      <button className="bodyweight__button" type="submit">
+      <button
+        onClick={handleClick}
+        className="bodyweight__button"
+        type="submit"
+      >
         +
       </button>
     </form>

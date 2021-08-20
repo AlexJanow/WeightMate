@@ -1,5 +1,5 @@
 import "./BodyweightResultsRender.css";
-
+import { v4 as uuidv4 } from "uuid";
 export default function BodyweightResultsRender() {
   // const items = { ...localStorage };
 
@@ -9,7 +9,7 @@ export default function BodyweightResultsRender() {
   if (bodyweightData) {
     return bodyweightData.map((data) => {
       return (
-        <li className="bodyweight__results-render-li">
+        <li key={uuidv4()} className="bodyweight__results-render-li">
           {data.date} - {data.weight} kg
         </li>
       );

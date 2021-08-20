@@ -1,7 +1,7 @@
 import { Line } from "react-chartjs-2";
 import "./ChartBodyweight.css";
-import { useState } from "react";
-export default function ChartBodyweight() {
+import { useState, useEffect } from "react";
+export default function ChartBodyweight({ bodyweightDataArray }) {
   const [dates, setDates] = useState([]);
   const [weights, setWeights] = useState([]);
   // const items = { ...localStorage };
@@ -11,15 +11,27 @@ export default function ChartBodyweight() {
   //   JSON.parse(value)
   // );
 
-  const dataSet = localStorage.getItem("bodyweightDataArray");
-  // if (dataSet) {
-  //   setDates(Object.keys(dataSet).map((d) => JSON.parse(d)));
-  //   setWeights(Object.keys(dataSet).map((w) => JSON.parse(w)));
-  // }
+  const dataSet = JSON.parse(localStorage.getItem("bodyweightDataArray"));
+  useEffect(() => {
+    if (dataSet) {
+      dataSet.map((data) => setDates((elements) => [...elements, data.date]));
+      dataSet.map((data) =>
+        setWeights((elements) => [...elements, data.weight])
+      );
+    } else {
+      return;
+    }
+    return function cleanup() {
+      setDates([]);
+      setWeights([]);
+    };
+  }, [bodyweightDataArray]);
+
   // console.log(Object.keys(dataSet));
   // const dates = Object.keys(dataSet).map((d) => JSON.parse(d.dates));
   // const weights = Object.keys(dataSet).map((w) => JSON.parse(w.weights));
-  // console.log(dataSet);
+  console.log(dates);
+
   const labels = dates;
   const data = {
     labels: labels,
