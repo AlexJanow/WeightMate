@@ -1,7 +1,9 @@
 import { Line } from "react-chartjs-2";
 import "./ChartBodyweight.css";
-
+import { useState } from "react";
 export default function ChartBodyweight() {
+  const [dates, setDates] = useState([]);
+  const [weights, setWeights] = useState([]);
   // const items = { ...localStorage };
 
   // const dates = Object.entries(items).map(([key, value]) => key);
@@ -9,10 +11,15 @@ export default function ChartBodyweight() {
   //   JSON.parse(value)
   // );
 
-  const dataSet = JSON.parse(localStorage.getItem("bodyweightDataArray"));
-  const dates = dataSet.map((d) => d.date);
-  const weights = dataSet.map((w) => w.weight);
-
+  const dataSet = localStorage.getItem("bodyweightDataArray");
+  // if (dataSet) {
+  //   setDates(Object.keys(dataSet).map((d) => JSON.parse(d)));
+  //   setWeights(Object.keys(dataSet).map((w) => JSON.parse(w)));
+  // }
+  // console.log(Object.keys(dataSet));
+  // const dates = Object.keys(dataSet).map((d) => JSON.parse(d.dates));
+  // const weights = Object.keys(dataSet).map((w) => JSON.parse(w.weights));
+  // console.log(dataSet);
   const labels = dates;
   const data = {
     labels: labels,

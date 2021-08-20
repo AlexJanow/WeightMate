@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import dayjs from "dayjs";
+import { jsonSchema } from "uuidv4";
 export default function BodyweightForm() {
   const date = dayjs().format("DD/MM/YYYY");
 
@@ -7,17 +8,22 @@ export default function BodyweightForm() {
     date,
     weight: "",
   });
-  const [bodyweightDataArray, setBodyweightDataArray] = useState([]);
-  // const [bodyweight, setBodyweight] = useState(() => {
-  //   const saved = localStorage.getItem(date);
-  //   const initialValue = JSON.parse(saved);
-  //   return initialValue || "";
-  // });
+  // const [bodyweightDataArray, setBodyweightDataArray] = useState([]);
+
+  const [bodyweightDataArray, setBodyweightDataArray] = useState(() => {
+    const saved = localStorage.getItem("bodyweightDataArray");
+    const initialValue = JSON.parse(saved);
+    return initialValue || [];
+  });
 
   useEffect(() => {
-    localStorage.setItem(
-      "bodyweightDataArray",
-      JSON.stringify(bodyweightDataArray)
+    const savedData =
+      JSON.parse(localStorage.getItem("bodyweightDataArray")) || [];
+    savedData.push(
+      localStorage.setItem(
+        "bodyweightDataArray",
+        JSON.stringify(bodyweightDataArray)
+      )
     );
   }, [bodyweightDataArray]);
 
@@ -31,6 +37,7 @@ export default function BodyweightForm() {
       bodyweightData,
     ]);
   };
+
   console.log(bodyweightDataArray);
   return (
     <form onSubmit={handleSubmit} className="bodyweight__form-wrapper">
