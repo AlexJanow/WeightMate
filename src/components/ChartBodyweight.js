@@ -14,10 +14,12 @@ export default function ChartBodyweight({ bodyweightDataArray }) {
   const dataSet = JSON.parse(localStorage.getItem("bodyweightDataArray"));
   useEffect(() => {
     if (dataSet) {
-      dataSet.map((data) => setDates((elements) => [...elements, data.date]));
-      dataSet.map((data) =>
-        setWeights((elements) => [...elements, data.weight])
-      );
+      dataSet
+        .slice(Math.max(dataSet.length - 10, 0))
+        .map((data) => setDates((elements) => [...elements, data.date]));
+      dataSet
+        .slice(Math.max(dataSet.length - 10, 0))
+        .map((data) => setWeights((elements) => [...elements, data.weight]));
     } else {
       return;
     }
