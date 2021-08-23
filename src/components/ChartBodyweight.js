@@ -1,13 +1,27 @@
 import { Line } from "react-chartjs-2";
 import "./ChartBodyweight.css";
+import { useState, useEffect } from "react";
+export default function ChartBodyweight({ bodyweightDataArray }) {
+  const [dates, setDates] = useState([]);
+  const [weights, setWeights] = useState([]);
 
-export default function ChartBodyweight() {
-  const items = { ...localStorage };
-
-  const dates = Object.entries(items).map(([key, value]) => key);
-  const weights = Object.entries(items).map(([key, value]) =>
-    JSON.parse(value)
-  );
+  const dataSet = JSON.parse(localStorage.getItem("bodyweightDataArray"));
+  useEffect(() => {
+    if (dataSet) {
+      dataSet
+        .slice(Math.max(dataSet.length - 10, 0))
+        .map((data) => setDates((elements) => [...elements, data.date]));
+      dataSet
+        .slice(Math.max(dataSet.length - 10, 0))
+        .map((data) => setWeights((elements) => [...elements, data.weight]));
+    } else {
+      return;
+    }
+    return function cleanup() {
+      setDates([]);
+      setWeights([]);
+    };
+  }, [bodyweightDataArray]);
 
   const labels = dates;
   const data = {
@@ -18,8 +32,8 @@ export default function ChartBodyweight() {
         data: weights,
         fill: {
           target: "origin",
-          above: "#10AC84", // Area will be red above the origin
-          below: "red", // And blue below the origin
+          above: "#10AC84",
+          below: "red",
         },
         borderColor: "#fff",
         borderWidth: 2,

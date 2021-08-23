@@ -1,21 +1,37 @@
 import { useState, useEffect } from "react";
 import dayjs from "dayjs";
-export default function BodyweightForm() {
+import addWeightToLocalStorage from "../utils/itemStorage";
+import { v4 as uuidv4 } from "uuid";
+export default function BodyweightForm({
+  bodyweightDataArray,
+  setBodyweightDataArray,
+}) {
   const date = dayjs().format("DD/MM/YYYY");
 
-  const [bodyweight, setBodyweight] = useState(() => {
-    const saved = localStorage.getItem(date);
-    const initialValue = JSON.parse(saved);
-    return initialValue || "";
+  const [bodyweightData, setBodyweightData] = useState({
+    id: uuidv4(),
+    date,
+    weight: "",
   });
 
   useEffect(() => {
-    localStorage.setItem(date, JSON.stringify(bodyweight));
-  }, [bodyweight]);
+    addWeightToLocalStorage(bodyweightDataArray);
+  }, [bodyweightDataArray]);
+
+  const handleAdd = () => {
+    setBodyweightDataArray((bodyweightDataSets) => [
+      ...bodyweightDataSets,
+      bodyweightData,
+    ]);
+  };
+
+  const handleSubmit = (e) => {
+    const weightInput = e.target.value;
+    handleAdd(weightInput);
+  };
 
   return (
-    <form className="bodyweight__form-wrapper">
-      {/* <label htmlFor="bodyweight__input">Bodyweight in kg</label> */}
+    <form onSubmit={handleSubmit} className="bodyweight__form-wrapper">
       <input
         type="number"
         min="0.1"
@@ -25,8 +41,9 @@ export default function BodyweightForm() {
         required
         width="200"
         placeholder="bodyweigh in kg"
-        value={bodyweight}
-        onChange={(e) => setBodyweight(e.target.value)}
+        onChange={(e) =>
+          setBodyweightData({ ...bodyweightData, weight: e.target.value })
+        }
       />
       <button className="bodyweight__button" type="submit">
         +

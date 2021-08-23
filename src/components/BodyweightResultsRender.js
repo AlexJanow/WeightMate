@@ -1,13 +1,19 @@
 import "./BodyweightResultsRender.css";
 
-export default function BodyweightResultsRender() {
-  const items = { ...localStorage };
+import { getItemsFromLocalStorage } from "../utils/itemStorage";
 
-  return Object.entries(items).map(([key, value], index) => {
-    return (
-      <li key={index} className="bodyweight__results-render-li">
-        {key} - {JSON.parse(value)} kg
-      </li>
-    );
-  });
+export default function BodyweightResultsRender() {
+  const bodyweightData = getItemsFromLocalStorage("bodyweightDataArray");
+
+  if (bodyweightData) {
+    return bodyweightData
+      .slice(Math.max(bodyweightData.length - 10, 0))
+      .map((data) => {
+        return (
+          <li key={data.id} className="bodyweight__results-render-li">
+            {data.date} - {data.weight} kg
+          </li>
+        );
+      });
+  } else return null;
 }
