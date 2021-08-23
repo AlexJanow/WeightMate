@@ -6,6 +6,7 @@ export default function TrainingInputForm({
   setSets,
   setTrainingData,
   trainingData,
+  exerciseName,
 }) {
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -14,12 +15,21 @@ export default function TrainingInputForm({
   const handleAdd = () => {
     setSets((sets) => [...sets, trainingData]);
   };
+  console.log(sets);
+  // useEffect(() => {
+  //   effect
+
+  // }, [input])
 
   return (
     <form onSubmit={handleSubmit} className="trainingInputForm__wrapper">
       <input
         onChange={(e) =>
-          setTrainingData({ ...trainingData, weight: e.target.value })
+          setTrainingData({
+            ...trainingData,
+            exName: exerciseName,
+            weight: e.target.value,
+          })
         }
         value={trainingData.weight}
         className="training__weight-input"
