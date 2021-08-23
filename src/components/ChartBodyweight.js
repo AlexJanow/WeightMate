@@ -4,12 +4,6 @@ import { useState, useEffect } from "react";
 export default function ChartBodyweight({ bodyweightDataArray }) {
   const [dates, setDates] = useState([]);
   const [weights, setWeights] = useState([]);
-  // const items = { ...localStorage };
-
-  // const dates = Object.entries(items).map(([key, value]) => key);
-  // const weights = Object.entries(items).map(([key, value]) =>
-  //   JSON.parse(value)
-  // );
 
   const dataSet = JSON.parse(localStorage.getItem("bodyweightDataArray"));
   useEffect(() => {
@@ -28,11 +22,6 @@ export default function ChartBodyweight({ bodyweightDataArray }) {
       setWeights([]);
     };
   }, [bodyweightDataArray]);
-
-  // console.log(Object.keys(dataSet));
-  // const dates = Object.keys(dataSet).map((d) => JSON.parse(d.dates));
-  // const weights = Object.keys(dataSet).map((w) => JSON.parse(w.weights));
-  console.log(dates);
 
   const labels = dates;
   const data = {

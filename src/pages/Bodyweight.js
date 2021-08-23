@@ -4,12 +4,13 @@ import BodyweightResultsRender from "../components/BodyweightResultsRender";
 import BodyweightForm from "../components/BodyweightForm";
 import ChartBodyweight from "../components/ChartBodyweight";
 import { useState } from "react";
+import { getItemsFromLocalStorage } from "../utils/itemStorage";
+
 export default function Bodyweight() {
   const date = dayjs().format("DD/MM/YYYY");
   const [bodyweightDataArray, setBodyweightDataArray] = useState(() => {
-    const saved = localStorage.getItem("bodyweightDataArray");
-    const initialValue = JSON.parse(saved);
-    return initialValue || [];
+    const saved = getItemsFromLocalStorage("bodyweightDataArray");
+    return saved || [];
   });
   return (
     <div>

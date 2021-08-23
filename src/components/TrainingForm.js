@@ -9,11 +9,13 @@ export default function TrainingForm() {
   const url = `https://wger.de/api/v2/exercise/search/?term=${search}`;
 
   useEffect(() => {
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => {
-        setResult(data);
-      });
+    if (search) {
+      fetch(url)
+        .then((res) => res.json())
+        .then((data) => {
+          setResult(data);
+        });
+    }
   }, [search]);
 
   return (
@@ -31,15 +33,6 @@ export default function TrainingForm() {
           value={search}
         />
         {/* </form> */}{" "}
-        {/* <select className="training__exercise-select">
-          <option value="Arms">Arms</option>
-          <option value="Legs">Legs</option>
-          <option value="Abs">Abs</option>
-          <option value="Chest">Chest</option>
-          <option value="Back">Back</option>
-          <option value="Shoulders">Shoulders</option>
-          <option value="Calves">Calves</option>
-        </select> */}
       </div>
       <ul>
         {suggestions
