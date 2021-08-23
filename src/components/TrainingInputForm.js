@@ -1,25 +1,28 @@
 import React from "react";
+import { addItemtoLocalStorage } from "../utils/itemStorage";
 import "./TrainingInputForm.css";
-
+import { useEffect } from "react";
+import { v4 as uuidv4 } from "uuid";
 export default function TrainingInputForm({
   sets,
   setSets,
   setTrainingData,
   trainingData,
   exerciseName,
+  setIsActive,
 }) {
   const handleSubmit = (e) => {
     e.preventDefault();
+
     handleAdd(e.target.value);
   };
   const handleAdd = () => {
     setSets((sets) => [...sets, trainingData]);
   };
-  console.log(sets);
-  // useEffect(() => {
-  //   effect
 
-  // }, [input])
+  useEffect(() => {
+    if (sets.length !== 0) addItemtoLocalStorage(trainingData.exId, sets);
+  }, [sets]);
 
   return (
     <form onSubmit={handleSubmit} className="trainingInputForm__wrapper">
@@ -27,6 +30,7 @@ export default function TrainingInputForm({
         onChange={(e) =>
           setTrainingData({
             ...trainingData,
+            setId: uuidv4(),
             exName: exerciseName,
             weight: e.target.value,
           })
@@ -41,7 +45,12 @@ export default function TrainingInputForm({
 
       <input
         onChange={(e) =>
-          setTrainingData({ ...trainingData, repetitions: e.target.value })
+          setTrainingData({
+            ...trainingData,
+            setId: uuidv4(),
+            exName: exerciseName,
+            repetitions: e.target.value,
+          })
         }
         value={trainingData.repetitions}
         className="training__repetitions-input"
