@@ -22,7 +22,10 @@ export default function SingleExercise() {
   const date = dayjs().format("DD/MM/YYYY");
   const classes = useStyles();
   const [exerciseData, setExerciseData] = useState("");
-  const [isActive, setIsActive] = useState("false");
+  // const [isActive, setIsActive] = useState("false");
+  const [isActive, setIsActive] = useState(
+    localStorage.getItem("isActive") === "false"
+  );
   const { exerciseId } = useParams();
   const [sets, setSets] = useState([]);
 
@@ -41,6 +44,8 @@ export default function SingleExercise() {
 
   const handleToggle = () => {
     setIsActive(!isActive);
+    let acuteToggle = isActive;
+    localStorage.setItem("isActive", acuteToggle);
   };
   const [trainingData, setTrainingData] = useState({
     exId: exerciseId,
