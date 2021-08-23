@@ -87,7 +87,6 @@ export default function SingleExercise() {
           trainingData={trainingData}
           exerciseId={exerciseId}
           exerciseName={exerciseName}
-          setIsActive={setIsActive}
         />
       )}
       {!isActive && (

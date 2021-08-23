@@ -9,11 +9,9 @@ export default function TrainingInputForm({
   setTrainingData,
   trainingData,
   exerciseName,
-  setIsActive,
 }) {
   const handleSubmit = (e) => {
     e.preventDefault();
-
     handleAdd(e.target.value);
   };
   const handleAdd = () => {
