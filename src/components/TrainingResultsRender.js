@@ -1,11 +1,5 @@
 import React from "react";
-import { v4 as uuidv4 } from "uuid";
-import { getItemsFromLocalStorage } from "../utils/itemStorage";
-import { useEffect } from "react";
-
-export default function TrainingResultsRender({ exerciseId }) {
-  const data = getItemsFromLocalStorage(exerciseId);
-
+export default function TrainingResultsRender({ data }) {
   return (
     <ol className="singleExercise__trainingInputForm-display">
       {data.map((set, index) => {
@@ -13,7 +7,7 @@ export default function TrainingResultsRender({ exerciseId }) {
 
         return (
           <li
-            key={uuidv4()}
+            key={set.setId}
             className="singleExercise__trainingInputForm-display-li"
           >
             {set.weight} kg {set.repetitions} x

@@ -29,6 +29,11 @@ export default function SingleExercise() {
   const { exerciseId } = useParams();
   const [sets, setSets] = useState([]);
 
+  const [exerciseLog, setExerciseLog] = useState([]);
+
+  function handleSaveNewLog(newLog) {
+    setExerciseLog([...exerciseLog, newLog]);
+  }
   const exerciseName = exerciseData.name;
 
   useEffect(() => {
@@ -41,6 +46,15 @@ export default function SingleExercise() {
         console.log(data);
       });
   }, [exerciseId]);
+
+  useEffect(() => {
+    const localStorageData = JSON.parse(localStorage.getItem(exerciseId)) || [];
+    setExerciseLog(localStorageData);
+  }, [exerciseId]);
+
+  useEffect(() => {
+    localStorage.setItem(exerciseId, JSON.stringify(exerciseLog));
+  }, [exerciseLog, exerciseId]);
 
   const handleToggle = () => {
     setIsActive(!isActive);
@@ -81,17 +95,12 @@ export default function SingleExercise() {
       </button>
       {!isActive && (
         <TrainingInputForm
-          sets={sets}
-          setSets={setSets}
-          setTrainingData={setTrainingData}
-          trainingData={trainingData}
-          exerciseId={exerciseId}
-          exerciseName={exerciseName}
+          onHandleSaveNewLog={handleSaveNewLog}
+          exId={exerciseId}
+          exName={exerciseName}
         />
       )}
-      {!isActive && (
-        <TrainingResultsRender exerciseId={exerciseId} sets={sets} />
-      )}
+      {!isActive && <TrainingResultsRender data={exerciseLog} />}
     </div>
   );
 }

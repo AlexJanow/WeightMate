@@ -1,39 +1,35 @@
 import React from "react";
-import { addItemtoLocalStorage } from "../utils/itemStorage";
 import "./TrainingInputForm.css";
-import { useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
-export default function TrainingInputForm({
-  sets,
-  setSets,
-  setTrainingData,
-  trainingData,
-  exerciseName,
-}) {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    handleAdd(e.target.value);
-  };
-  const handleAdd = () => {
-    setSets((sets) => [...sets, trainingData]);
-  };
+import dayjs from "dayjs";
 
-  useEffect(() => {
-    if (sets.length !== 0) addItemtoLocalStorage(trainingData.exId, sets);
-  }, [sets]);
+export default function TrainingInputForm({
+  exId,
+  onHandleSaveNewLog,
+  exName,
+}) {
+  function handleSubmit(event) {
+    event.preventDefault();
+    // extract infos from form
+    const form = event.target;
+    const weight = form.weight.value;
+    const repetitions = form.repetitions.value;
+
+    const newSetInput = {
+      exId,
+      exName,
+      setId: uuidv4(),
+      date: dayjs().format("DD/MM/YYYY"),
+      weight,
+      repetitions,
+    };
+
+    onHandleSaveNewLog(newSetInput);
+  }
 
   return (
     <form onSubmit={handleSubmit} className="trainingInputForm__wrapper">
       <input
-        onChange={(e) =>
-          setTrainingData({
-            ...trainingData,
-            setId: uuidv4(),
-            exName: exerciseName,
-            weight: e.target.value,
-          })
-        }
-        value={trainingData.weight}
         className="training__weight-input"
         type="number"
         name="weight"
@@ -42,15 +38,6 @@ export default function TrainingInputForm({
       />
 
       <input
-        onChange={(e) =>
-          setTrainingData({
-            ...trainingData,
-            setId: uuidv4(),
-            exName: exerciseName,
-            repetitions: e.target.value,
-          })
-        }
-        value={trainingData.repetitions}
         className="training__repetitions-input"
         type="number"
         name="repetitions"
