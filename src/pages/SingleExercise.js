@@ -3,9 +3,11 @@ import { useParams } from "react-router";
 import { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import SingleExerciseAccordion from "../components/SingleExerciseAccordion";
-import { v4 as uuidv4 } from "uuid";
+
+import dayjs from "dayjs";
 import "./SingleExercise.css";
 import TrainingInputForm from "../components/TrainingInputForm";
+import TrainingResultsRender from "../components/TrainingResultsRender";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -17,17 +19,22 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 export default function SingleExercise() {
+  const date = dayjs().format("DD/MM/YYYY");
   const classes = useStyles();
   const [exerciseData, setExerciseData] = useState("");
-  const [isActive, setIsActive] = useState("false");
+  // const [isActive, setIsActive] = useState("false");
+  const [isActive, setIsActive] = useState(
+    localStorage.getItem("isActive") === "false"
+  );
   const { exerciseId } = useParams();
-
   const [sets, setSets] = useState([]);
-  const [trainingData, setTrainingData] = useState({
-    Id: exerciseId,
-    weight: "",
-    repetitions: "",
-  });
+
+  const [exerciseLog, setExerciseLog] = useState([]);
+
+  function handleSaveNewLog(newLog) {
+    setExerciseLog([...exerciseLog, newLog]);
+  }
+  const exerciseName = exerciseData.name;
 
   useEffect(() => {
     const url = `https://wger.de/api/v2/exerciseinfo/${exerciseId}`;
@@ -35,13 +42,33 @@ export default function SingleExercise() {
       .then((res) => res.json())
       .then((data) => {
         setExerciseData(data);
+
+        console.log(data);
       });
   }, [exerciseId]);
 
+  useEffect(() => {
+    const localStorageData = JSON.parse(localStorage.getItem(exerciseId)) || [];
+    setExerciseLog(localStorageData);
+  }, [exerciseId]);
+
+  useEffect(() => {
+    localStorage.setItem(exerciseId, JSON.stringify(exerciseLog));
+  }, [exerciseLog, exerciseId]);
+
   const handleToggle = () => {
     setIsActive(!isActive);
+    let acuteToggle = isActive;
+    localStorage.setItem("isActive", acuteToggle);
   };
-
+  const [trainingData, setTrainingData] = useState({
+    exId: exerciseId,
+    exName: exerciseName,
+    setId: "",
+    date,
+    weight: "",
+    repetitions: "",
+  });
   return (
     <div className="singleExercise__wrapper">
       <div className="singleExercise__name">
@@ -68,27 +95,12 @@ export default function SingleExercise() {
       </button>
       {!isActive && (
         <TrainingInputForm
-          sets={sets}
-          setSets={setSets}
-          setTrainingData={setTrainingData}
-          trainingData={trainingData}
-          exerciseId={exerciseId}
+          onHandleSaveNewLog={handleSaveNewLog}
+          exId={exerciseId}
+          exName={exerciseName}
         />
       )}
-      {!isActive && (
-        <ol className="singleExercise__trainingInputForm-display">
-          {sets.map((set, index) => {
-            return (
-              <li
-                key={uuidv4()}
-                className="singleExercise__trainingInputForm-display-li"
-              >
-                {set.weight} kg {set.repetitions} x
-              </li>
-            );
-          })}
-        </ol>
-      )}
+      {!isActive && <TrainingResultsRender data={exerciseLog} />}
     </div>
   );
 }

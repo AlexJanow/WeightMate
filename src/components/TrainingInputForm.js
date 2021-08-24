@@ -1,27 +1,35 @@
 import React from "react";
 import "./TrainingInputForm.css";
+import { v4 as uuidv4 } from "uuid";
+import dayjs from "dayjs";
 
 export default function TrainingInputForm({
-  sets,
-  setSets,
-  setTrainingData,
-  trainingData,
+  exId,
+  onHandleSaveNewLog,
+  exName,
 }) {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    handleAdd(e.target.value);
-  };
-  const handleAdd = () => {
-    setSets((sets) => [...sets, trainingData]);
-  };
+  function handleSubmit(event) {
+    event.preventDefault();
+    // extract infos from form
+    const form = event.target;
+    const weight = form.weight.value;
+    const repetitions = form.repetitions.value;
+
+    const newSetInput = {
+      exId,
+      exName,
+      setId: uuidv4(),
+      date: dayjs().format("DD/MM/YYYY"),
+      weight,
+      repetitions,
+    };
+
+    onHandleSaveNewLog(newSetInput);
+  }
 
   return (
     <form onSubmit={handleSubmit} className="trainingInputForm__wrapper">
       <input
-        onChange={(e) =>
-          setTrainingData({ ...trainingData, weight: e.target.value })
-        }
-        value={trainingData.weight}
         className="training__weight-input"
         type="number"
         name="weight"
@@ -30,10 +38,6 @@ export default function TrainingInputForm({
       />
 
       <input
-        onChange={(e) =>
-          setTrainingData({ ...trainingData, repetitions: e.target.value })
-        }
-        value={trainingData.repetitions}
         className="training__repetitions-input"
         type="number"
         name="repetitions"
