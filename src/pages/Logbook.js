@@ -1,3 +1,10 @@
+import LogCard from "../components/LogCard";
+
 export default function Logbook() {
-  return <div></div>;
+  // const localStorageData = JSON.parse(localStorage.getItem(exerciseId)) || [];
+  return (
+    <div>
+      <LogCard />
+    </div>
+  );
 }

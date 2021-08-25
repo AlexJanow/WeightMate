@@ -28,3 +28,7 @@ code {
 
   --tertiaryColor: #0b5643;
 }
+
+.Link {
+  all: unset;
+}

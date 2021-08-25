@@ -36,10 +36,10 @@
   all: unset;
   background-color: var(--secondaryBackground);
   color: var(--secondary);
-  padding-left: 1rem;
+  /* padding-left: 1rem;
   padding-right: 1rem;
-  padding-bottom: 3px;
-
+  padding-bottom: 3px; */
+  padding: 3%;
   border-radius: 5px;
   font-size: 1.5rem;
 
@@ -50,4 +50,17 @@
   padding-top: 5%;
   padding-bottom: 5%;
   font-size: 1.3rem;
+}
+
+.singleExercise__button-finish {
+  all: unset;
+  /* position: fixed; */
+  /* bottom: auto; */
+  margin-top: 80vh;
+  padding: 3%;
+  background-color: var(--secondaryBackground);
+  color: var(--secondary);
+  font-size: 1.5rem;
+  border-radius: 5px;
+  margin: 5%;
 }
