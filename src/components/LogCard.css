@@ -1,0 +1,7 @@
+.LogCard__wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.LogCard__card {
+}
