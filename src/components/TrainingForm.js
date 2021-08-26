@@ -22,12 +22,14 @@ export default function TrainingForm() {
     <div className="training__exercise-form">
       {/* <form> */}
       <div className="training__wrapper">
-        {/* <label htmlFor="exercise">Search for exercise</label> */}
+        <label className="training__exercise-input-label" htmlFor="exercise">
+          Search for exercise
+        </label>
         <input
           className="training__exercise-input"
           type="text"
           name="exercise"
-          placeholder="search for exercise..."
+          placeholder="bench press,pull-up..."
           required
           onChange={(e) => setSearch(e.target.value)}
           value={search}

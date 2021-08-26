@@ -3,12 +3,12 @@ import { useParams } from "react-router";
 import { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import SingleExerciseAccordion from "../components/SingleExerciseAccordion";
-
 import dayjs from "dayjs";
 import "./SingleExercise.css";
 import TrainingInputForm from "../components/TrainingInputForm";
 import TrainingResultsRender from "../components/TrainingResultsRender";
 
+import { useHistory } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "80%",
@@ -19,17 +19,19 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 export default function SingleExercise() {
-  const date = dayjs().format("DD/MM/YYYY");
+  const history = useHistory();
+  const todayDate = dayjs().format("DD/MM/YYYY");
   const classes = useStyles();
   const [exerciseData, setExerciseData] = useState("");
-  // const [isActive, setIsActive] = useState("false");
+
   const [isActive, setIsActive] = useState(
     localStorage.getItem("isActive") === "false"
   );
   const { exerciseId } = useParams();
-  const [sets, setSets] = useState([]);
 
   const [exerciseLog, setExerciseLog] = useState([]);
+
+  const [addToTraining, setAddToTraining] = useState([]);
 
   function handleSaveNewLog(newLog) {
     setExerciseLog([...exerciseLog, newLog]);
@@ -42,8 +44,6 @@ export default function SingleExercise() {
       .then((res) => res.json())
       .then((data) => {
         setExerciseData(data);
-
-        console.log(data);
       });
   }, [exerciseId]);
 
@@ -61,14 +61,36 @@ export default function SingleExercise() {
     let acuteToggle = isActive;
     localStorage.setItem("isActive", acuteToggle);
   };
-  const [trainingData, setTrainingData] = useState({
-    exId: exerciseId,
-    exName: exerciseName,
-    setId: "",
-    date,
-    weight: "",
-    repetitions: "",
-  });
+
+  //add to training by date
+  const addTraining = () => {
+    const exerciseToday = exerciseLog.filter(
+      (exercise) => exercise.date === todayDate
+    );
+    setAddToTraining(exerciseToday);
+  };
+
+  const handleAddExercise = () => {
+    addTraining();
+  };
+
+  useEffect(() => {
+    // only store new ones, if the setId is already is already there
+    const setsFromToday = JSON.parse(localStorage.getItem(todayDate)) || [];
+    const setIdsFromToday = setsFromToday.map((exercise) => exercise.setId);
+
+    const newSets = addToTraining.filter((set) => {
+      return !setIdsFromToday.includes(set.setId);
+    });
+    if (newSets.length > 0) {
+      localStorage.setItem(
+        todayDate,
+        JSON.stringify([...setsFromToday, ...newSets])
+      );
+      history.push("/training");
+    }
+  }, [addToTraining, todayDate, history]);
+
   return (
     <div className="singleExercise__wrapper">
       <div className="singleExercise__name">
@@ -101,6 +123,14 @@ export default function SingleExercise() {
         />
       )}
       {!isActive && <TrainingResultsRender data={exerciseLog} />}
+      {!isActive && (
+        <button
+          onClick={handleAddExercise}
+          className="singleExercise__button-finish"
+        >
+          finish exercise
+        </button>
+      )}
     </div>
   );
 }
