@@ -4,6 +4,10 @@
   background-color: var(--secondaryBackground);
   color: var(--secondary);
   border-radius: 5px;
-  padding: 5%;
+  padding: 1em;
   font-size: 1.2rem;
+}
+
+.LogCard__wrapper li {
+  list-style: none;
 }
