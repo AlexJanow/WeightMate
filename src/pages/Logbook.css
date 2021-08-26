@@ -1,9 +1,7 @@
-.LogCard__wrapper {
-  display: flex;
-  flex-direction: column;
+.Logbook__select {
   background-color: var(--secondaryBackground);
   color: var(--secondary);
+  padding: 3%;
+  font-size: 1.5rem;
   border-radius: 5px;
-  padding: 5%;
-  font-size: 1.2rem;
 }

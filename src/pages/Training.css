@@ -7,7 +7,7 @@
 .training__wrapper {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(5, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   justify-items: center;
   row-gap: 5px;
 }
@@ -15,6 +15,12 @@
 textarea {
   border-radius: 5px;
   height: 2.6rem;
+  font-size: 1.2rem;
+}
+.training__exercise-input-label {
+  grid-column-start: 2;
+  grid-column-end: 5;
+  font-size: 1.5rem;
 }
 .training__exercise-input {
   grid-column-start: 2;

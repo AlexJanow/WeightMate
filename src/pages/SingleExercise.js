@@ -90,8 +90,7 @@ export default function SingleExercise() {
       history.push("/training");
     }
   }, [addToTraining, todayDate, history]);
-  // console.log(addToTraining);
-  // console.log(addToTraining);
+
   return (
     <div className="singleExercise__wrapper">
       <div className="singleExercise__name">
