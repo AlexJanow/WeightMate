@@ -13,3 +13,7 @@
 .main {
   overflow-y: scroll;
 }
+
+button:hover {
+  cursor: pointer;
+}
