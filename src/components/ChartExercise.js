@@ -1,36 +1,68 @@
 import React from "react";
 import { Line } from "react-chartjs-2";
 import { useState, useEffect } from "react";
-import { getExerciseNameFromLocalStorage } from "../utils/itemStorage";
+import "./ChartExercise.css";
+
 export default function ChartExercise() {
   const [dates, setDates] = useState([]);
-  const [maxVolume, setMaxVolume] = useState([]);
+  const [maxWeight, setMaxWeight] = useState([]);
   const [selectedExercise, setSelectedExercise] = useState("");
 
-  const dataSet = JSON.parse(localStorage.getItem("bodyweightDataArray"));
-
-  //   const exercises = [];
-  // Object.keys(localStorage).forEach(function (key) {
-  //   if (key.match(regexIsNumber)) {
-  //     exercises.push(key);
-  //     }
-  //   });
   const exercises = [];
-  Object.keys(localStorage).map((key) => {
+  Object.keys(localStorage).forEach((key) => {
     if (!isNaN(key)) {
       if (JSON.parse(localStorage.getItem(key)).length !== 0)
         exercises.push(JSON.parse(localStorage.getItem(key)));
     }
   });
-  console.log(exercises);
+
   const handleChange = (e) => {
     setSelectedExercise(e.target.value);
   };
-  //   const exerciseName = () => {
-  //     const exName = getExerciseNameFromLocalStorage();
-  //     return exName[0].exName;
-  //   };
 
+  useEffect(() => {
+    setDates([]);
+    setMaxWeight([]);
+    const dataSet = JSON.parse(localStorage.getItem(selectedExercise));
+
+    dataSet?.map((data) => setDates((elements) => [...elements, data.date]));
+    console.log(dataSet);
+    dataSet?.map((set) => {
+      if (set.repetitions <= 9) {
+        setMaxWeight((elements) => [
+          ...elements,
+          set?.weight * (36 / (37 - set.repetitions)),
+        ]);
+      }
+      if (set.repetitions > 9) {
+        setMaxWeight((elements) => [
+          ...elements,
+          set?.weight * (1 + 0.0333 * set.repetitions),
+        ]);
+      }
+    });
+  }, [selectedExercise]);
+  console.log(maxWeight);
+  const labels = dates;
+  const data = {
+    labels: labels,
+    datasets: [
+      {
+        label: "Maximum weight",
+        data: maxWeight,
+        fill: {
+          target: "origin",
+          above: "#10AC84",
+          below: "red",
+        },
+        borderColor: "#fff",
+        borderWidth: 2,
+        tension: 0.5,
+        backgroundColor: "#fff",
+      },
+    ],
+  };
+  console.log(selectedExercise);
   return (
     <div>
       <select
@@ -49,6 +81,7 @@ export default function ChartExercise() {
           );
         })}
       </select>
+      <Line className="chart__exercise" data={data} height={200} width={200} />
     </div>
   );
 }
