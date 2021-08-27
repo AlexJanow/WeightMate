@@ -9,6 +9,7 @@ export default function ChartExercise() {
   const [selectedExercise, setSelectedExercise] = useState("");
 
   const exercises = [];
+
   Object.keys(localStorage).forEach((key) => {
     if (!isNaN(key)) {
       if (JSON.parse(localStorage.getItem(key)).length !== 0)
@@ -26,7 +27,7 @@ export default function ChartExercise() {
     const dataSet = JSON.parse(localStorage.getItem(selectedExercise));
 
     dataSet?.map((data) => setDates((elements) => [...elements, data.date]));
-    console.log(dataSet);
+
     dataSet?.map((set) => {
       if (set.repetitions <= 9) {
         setMaxWeight((elements) => [
@@ -42,7 +43,7 @@ export default function ChartExercise() {
       }
     });
   }, [selectedExercise]);
-  console.log(maxWeight);
+
   const labels = dates;
   const data = {
     labels: labels,
@@ -62,7 +63,7 @@ export default function ChartExercise() {
       },
     ],
   };
-  console.log(selectedExercise);
+
   return (
     <div>
       <select
@@ -70,9 +71,10 @@ export default function ChartExercise() {
         className="Logbook__select"
         onChange={handleChange}
       >
-        <option value="DEFAULT" disabled hidden>
+        <option value={"DEFAULT"} disabled hidden>
           Choose an exercise
         </option>
+
         {exercises.map((exercise) => {
           return (
             <option key={exercise[0].exId} value={exercise[0].exId}>
@@ -81,7 +83,7 @@ export default function ChartExercise() {
           );
         })}
       </select>
-      <Line className="chart__exercise" data={data} height={200} width={200} />
+      <Line className="chart__exercise" data={data} height={200} width={300} />
     </div>
   );
 }
