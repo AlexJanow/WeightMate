@@ -4,11 +4,16 @@
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: auto;
-  background: linear-gradient(var(--tertiaryColor), var(--secondary));
+  /* background: linear-gradient(var(--tertiaryColor), var(--secondary)); */
+  background: var(--primaryBackground);
   background-size: cover;
   height: 100vh;
 }
 
 .main {
   overflow-y: scroll;
+}
+
+button:hover {
+  cursor: pointer;
 }
