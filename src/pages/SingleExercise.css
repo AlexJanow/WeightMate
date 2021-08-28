@@ -49,7 +49,9 @@
   padding-bottom: 5%;
   font-size: 1.3rem;
 }
-
+.pr {
+  color: green;
+}
 .singleExercise__button-finish {
   all: unset;
 
