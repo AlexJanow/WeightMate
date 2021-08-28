@@ -1,0 +1,12 @@
+.WelcomeMessage__wrapper {
+  color: var(--primary);
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: left;
+  padding: 0.3em;
+}
+
+.WelcomeMessage__message {
+  word-break: break-word;
+  word-spacing: 100vw;
+}

@@ -21,6 +21,11 @@ export function getExerciseNameFromLocalStorage(key) {
   const data = JSON.parse(localStorage.getItem(key));
   return data;
 }
+
+export function createItemInLocalStorage(key, item) {
+  localStorage.setItem(key, JSON.stringify(item));
+}
+
 // export function removeItemFromLocalStorageByName(key, itemId) {
 //   const data = getItemsFromLocalStorage(key);
 
