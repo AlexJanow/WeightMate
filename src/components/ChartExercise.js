@@ -66,24 +66,33 @@ export default function ChartExercise() {
 
   return (
     <div>
-      <select
-        defaultValue={"DEFAULT"}
-        className="Logbook__select"
-        onChange={handleChange}
-      >
-        <option value={"DEFAULT"} disabled hidden>
-          Choose an exercise
-        </option>
+      {exercises.length !== 0 && (
+        <select
+          defaultValue={"DEFAULT"}
+          className="Logbook__select"
+          onChange={handleChange}
+        >
+          <option value={"DEFAULT"} disabled hidden>
+            Choose an exercise
+          </option>
 
-        {exercises.map((exercise) => {
-          return (
-            <option key={exercise[0].exId} value={exercise[0].exId}>
-              {exercise[0].exName}
-            </option>
-          );
-        })}
-      </select>
-      <Line className="chart__exercise" data={data} height={200} width={300} />
+          {exercises.map((exercise) => {
+            return (
+              <option key={exercise[0].exId} value={exercise[0].exId}>
+                {exercise[0].exName}
+              </option>
+            );
+          })}
+        </select>
+      )}
+      {exercises.length !== 0 && (
+        <Line
+          className="chart__exercise"
+          data={data}
+          height={200}
+          width={300}
+        />
+      )}
     </div>
   );
 }

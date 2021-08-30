@@ -4,5 +4,5 @@ header {
   top: 0;
   background-color: var(--secondaryBackground);
   color: var(--secondary);
-  width: 100%;
+  width: 375px;
 }
