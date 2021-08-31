@@ -5,13 +5,22 @@ import Logbook from "../pages/Logbook";
 import { Switch, Route } from "react-router";
 import "./Main.css";
 import SingleExercise from "../pages/SingleExercise";
+import { useState } from "react";
 
 export default function Main() {
+  const [bodyweightChartDataExist, setBodyweightChartDataExist] =
+    useState(false);
+  const bodyweightChartDataCheck = (dataSet) => {
+    setBodyweightChartDataExist(dataSet.length !== 0);
+  };
   return (
-    <main>
+    <main className="Main__content">
       <Switch>
         <Route path="/bodyweight">
-          <Bodyweight />
+          <Bodyweight
+            bwDataExist={bodyweightChartDataExist}
+            bwDataCheck={bodyweightChartDataCheck}
+          />
         </Route>
         <Route path="/training/:exerciseId">
           <SingleExercise />
@@ -23,7 +32,10 @@ export default function Main() {
           <Logbook />
         </Route>
         <Route path="/">
-          <Home />
+          <Home
+            bwDataExist={bodyweightChartDataExist}
+            bwDataCheck={bodyweightChartDataCheck}
+          />
         </Route>
       </Switch>
     </main>

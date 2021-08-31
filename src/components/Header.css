@@ -4,5 +4,10 @@ header {
   top: 0;
   background-color: var(--secondaryBackground);
   color: var(--secondary);
-  width: 100%;
+  width: 375px;
+}
+h1 {
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  padding: 10px;
 }

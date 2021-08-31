@@ -41,7 +41,15 @@ textarea {
 
 .training__result-li {
   list-style: none;
-  border: 1px solid var(--primary);
+  border: 1px solid var(--tertiaryLowOpacity);
   padding: 5px;
   margin: 5px;
+}
+
+.training__result-li:nth-child(odd) {
+  background-color: var(--tertiaryLowOpacity);
+}
+.training__result-li:hover {
+  background-color: darkslategrey;
+  font-size: 1.1rem;
 }

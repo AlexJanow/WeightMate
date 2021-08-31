@@ -3,13 +3,11 @@ import { Line } from "react-chartjs-2";
 import { useState, useEffect } from "react";
 import "./ChartExercise.css";
 
-export default function ChartExercise() {
+export default function ChartExercise({ exercisesExist }) {
   const [dates, setDates] = useState([]);
   const [maxWeight, setMaxWeight] = useState([]);
   const [selectedExercise, setSelectedExercise] = useState("");
-
   const exercises = [];
-
   Object.keys(localStorage).forEach((key) => {
     if (!isNaN(key)) {
       if (JSON.parse(localStorage.getItem(key)).length !== 0)
@@ -66,24 +64,33 @@ export default function ChartExercise() {
 
   return (
     <div>
-      <select
-        defaultValue={"DEFAULT"}
-        className="Logbook__select"
-        onChange={handleChange}
-      >
-        <option value={"DEFAULT"} disabled hidden>
-          Choose an exercise
-        </option>
+      {exercises.length !== 0 && (
+        <select
+          defaultValue={"DEFAULT"}
+          className="Logbook__select"
+          onChange={handleChange}
+        >
+          <option value={"DEFAULT"} disabled hidden>
+            Choose an exercise
+          </option>
 
-        {exercises.map((exercise) => {
-          return (
-            <option key={exercise[0].exId} value={exercise[0].exId}>
-              {exercise[0].exName}
-            </option>
-          );
-        })}
-      </select>
-      <Line className="chart__exercise" data={data} height={200} width={300} />
+          {exercises.map((exercise) => {
+            return (
+              <option key={exercise[0].exId} value={exercise[0].exId}>
+                {exercise[0].exName}
+              </option>
+            );
+          })}
+        </select>
+      )}
+      {exercises.length !== 0 && (
+        <Line
+          className="chart__exercise"
+          data={data}
+          height={200}
+          width={300}
+        />
+      )}
     </div>
   );
 }

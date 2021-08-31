@@ -1,0 +1,48 @@
+.WelcomeMessage__wrapper {
+  color: var(--primary);
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: left;
+  padding: 0.3em;
+  word-break: break-word;
+  display: flex;
+  flex-direction: column;
+}
+
+.WelcomeMessage__message {
+  word-break: break-word;
+  word-spacing: 100vw;
+  font-size: 60px;
+}
+
+.WelcomeMessage__input {
+  font-size: 2.6rem;
+  max-width: 60vw;
+  border-radius: 5px;
+}
+.WelcomeMessage__input:focus {
+  outline: none;
+  box-shadow: 0.2rem 0.8rem 1.6rem black;
+}
+
+.WelcomeMessage__submit-button {
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #04aa6d;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+.WelcomeMessage__submit-button:hover {
+  background-color: #3e8e41;
+}
+
+.WelcomeMessage__submit-button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}

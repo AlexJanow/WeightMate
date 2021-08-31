@@ -8,14 +8,20 @@
 
 body {
   margin: 0;
+  position: relative;
+  height: 100vh;
   /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif; */
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
-    Helvetica, Arial, "Lucida Grande", sans-serif;
-  font-weight: 300;
+  /* font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
+    Helvetica, Arial, "Lucida Grande", sans-serif; */
+  font-family: "Rubik", sans-serif;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  flex-direction: column;
+  max-width: 375px;
 }
 
 code {
@@ -30,6 +36,7 @@ code {
   --secondaryBackground: whitesmoke;
 
   --tertiaryColor: #0b5643;
+  --tertiaryLowOpacity: #0b56432a;
 }
 
 .Link {

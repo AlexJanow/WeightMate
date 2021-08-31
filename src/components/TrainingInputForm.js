@@ -8,7 +8,7 @@ export default function TrainingInputForm({
   onHandleSaveNewLog,
   exName,
 }) {
-  function handleSubmit(event) {
+  const handleSubmit = (event) => {
     event.preventDefault();
     // extract infos from form
     const form = event.target;
@@ -25,7 +25,7 @@ export default function TrainingInputForm({
     };
 
     onHandleSaveNewLog(newSetInput);
-  }
+  };
 
   return (
     <form onSubmit={handleSubmit} className="trainingInputForm__wrapper">

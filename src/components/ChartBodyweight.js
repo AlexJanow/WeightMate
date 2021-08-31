@@ -1,7 +1,8 @@
 import { Line } from "react-chartjs-2";
 import "./ChartBodyweight.css";
 import { useState, useEffect } from "react";
-export default function ChartBodyweight({ bodyweightDataArray }) {
+
+export default function ChartBodyweight({ bodyweightDataArray, bwDataCheck }) {
   const [dates, setDates] = useState([]);
   const [weights, setWeights] = useState([]);
 
@@ -17,11 +18,16 @@ export default function ChartBodyweight({ bodyweightDataArray }) {
     } else {
       return;
     }
+
     return function cleanup() {
       setDates([]);
       setWeights([]);
     };
-  }, [bodyweightDataArray]);
+  }, []);
+
+  useEffect(() => {
+    if (dataSet) bwDataCheck(dataSet);
+  }, [dataSet]);
 
   const labels = dates;
   const data = {
@@ -45,7 +51,7 @@ export default function ChartBodyweight({ bodyweightDataArray }) {
 
   return (
     <div className="chart__bodyweight">
-      <Line data={data} height={200} width={300} />{" "}
+      {weights.length !== 0 && <Line data={data} height={200} width={300} />}
     </div>
   );
 }

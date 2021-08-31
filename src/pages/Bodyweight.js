@@ -6,15 +6,19 @@ import ChartBodyweight from "../components/ChartBodyweight";
 import { useState } from "react";
 import { getItemsFromLocalStorage } from "../utils/itemStorage";
 
-export default function Bodyweight() {
+export default function Bodyweight({ bwDataCheck }) {
   const date = dayjs().format("DD/MM/YYYY");
   const [bodyweightDataArray, setBodyweightDataArray] = useState(() => {
     const saved = getItemsFromLocalStorage("bodyweightDataArray");
     return saved || [];
   });
+
   return (
     <div>
-      <ChartBodyweight bodyweightDataArray={bodyweightDataArray} />
+      <ChartBodyweight
+        bodyweightDataArray={bodyweightDataArray}
+        bwDataCheck={bwDataCheck}
+      />
       <div className="bodyweight__container">
         <div className="bodyweight__date">
           {date}
@@ -25,7 +29,8 @@ export default function Bodyweight() {
         </div>
       </div>
       <div className="bodyweight__data-container">
-        <ul>
+        <h3 className="bodyweight__data-container_title">Bodyweight Logbook</h3>
+        <ul className="bodyweight__data-container-ul">
           <BodyweightResultsRender />
         </ul>
       </div>
