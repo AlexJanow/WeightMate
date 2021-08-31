@@ -1,6 +1,11 @@
 .bodyweight__results-render-li {
   list-style: none;
-  color: var(--primary);
+  color: var(--secondary);
+  /* margin: 1em; */
+  font-size: 1.2rem;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  width: fit-content;
 }
 
 .bodyweight__form-wrapper {
@@ -25,4 +30,12 @@
 
   border-radius: 5px;
   font-size: 2rem;
+}
+
+.bodyweight__results-render-li:last-child {
+  font-size: 1.3em;
+}
+
+.bodyweight__results-render-li:nth-child(odd) {
+  background-color: var(--tertiaryLowOpacity);
 }

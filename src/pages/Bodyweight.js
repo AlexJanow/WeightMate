@@ -12,7 +12,7 @@ export default function Bodyweight({ bwDataCheck }) {
     const saved = getItemsFromLocalStorage("bodyweightDataArray");
     return saved || [];
   });
-  // const bodyweightChartDataCheck = () => {};
+
   return (
     <div>
       <ChartBodyweight
@@ -29,7 +29,8 @@ export default function Bodyweight({ bwDataCheck }) {
         </div>
       </div>
       <div className="bodyweight__data-container">
-        <ul>
+        <h3 className="bodyweight__data-container_title">Bodyweight Logbook</h3>
+        <ul className="bodyweight__data-container-ul">
           <BodyweightResultsRender />
         </ul>
       </div>

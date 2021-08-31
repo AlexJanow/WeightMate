@@ -34,6 +34,7 @@ code {
   --secondaryBackground: whitesmoke;
 
   --tertiaryColor: #0b5643;
+  --tertiaryLowOpacity: #0b56432a;
 }
 
 .Link {
