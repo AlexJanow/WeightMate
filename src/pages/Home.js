@@ -5,7 +5,7 @@ import WelcomeMessage from "../components/WelcomeMessage";
 import { getItemsFromLocalStorage } from "../utils/itemStorage";
 import { useState, useEffect } from "react";
 import "./Home.css";
-
+import { motion } from "framer-motion";
 export default function Home({ bwDataCheck, bwDataExist }) {
   const [usernameExist, setUsernameExist] = useState(false);
   const [exerciseExist, setExerciseExist] = useState(false);
@@ -22,6 +22,37 @@ export default function Home({ bwDataCheck, bwDataExist }) {
       }
     });
   }, []);
+
+  const containerVariants = {
+    hidden: {
+      opacity: 0,
+      y: "100",
+    },
+    visibleOne: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        delay: 1,
+      },
+    },
+    visibleTwo: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        delay: 1.5,
+      },
+    },
+    visibleThree: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        type: "spring",
+        delay: 4,
+      },
+    },
+  };
   return (
     <div className="Home__wrapper">
       <WelcomeMessage setUsernameExist={setUsernameExist} />
@@ -30,12 +61,23 @@ export default function Home({ bwDataCheck, bwDataExist }) {
         usernameExist={usernameExist}
         exerciseExist={exerciseExist}
       />
-      <ChartBodyweight
-        bwDataCheck={bwDataCheck}
-        bodyweightDataArray={bodyweightDataArray}
-      />
-
-      <ChartExercise exerciseExist={exerciseExist} />
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate="visibleOne"
+      >
+        <ChartBodyweight
+          bwDataCheck={bwDataCheck}
+          bodyweightDataArray={bodyweightDataArray}
+        />
+      </motion.div>
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate="visibleTwo"
+      >
+        <ChartExercise exerciseExist={exerciseExist} />
+      </motion.div>
     </div>
   );
 }

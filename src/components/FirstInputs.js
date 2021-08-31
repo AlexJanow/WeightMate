@@ -38,7 +38,7 @@ export default function FirstInputs({
       },
     },
   };
-  console.log(bwDataExist, exerciseExist);
+
   return (
     <div>
       {!bwDataExist ||

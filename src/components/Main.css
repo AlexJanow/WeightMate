@@ -1,2 +1,5 @@
-main {
+.Main__content {
+  flex: 1;
+  overflow-y: scroll;
+  padding-bottom: 60px;
 }

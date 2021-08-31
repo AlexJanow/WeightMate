@@ -14,7 +14,7 @@ export default function Main() {
     setBodyweightChartDataExist(dataSet.length !== 0);
   };
   return (
-    <main>
+    <main className="Main__content">
       <Switch>
         <Route path="/bodyweight">
           <Bodyweight
