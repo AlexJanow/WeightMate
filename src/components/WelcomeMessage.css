@@ -12,6 +12,7 @@
 .WelcomeMessage__message {
   word-break: break-word;
   word-spacing: 100vw;
+  font-size: 60px;
 }
 
 .WelcomeMessage__input {

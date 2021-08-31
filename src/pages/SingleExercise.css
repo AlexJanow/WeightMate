@@ -18,6 +18,8 @@
 
 .singleExercise__img img {
   width: 150px;
+  background-color: whitesmoke;
+  border-radius: 5px;
 }
 .singleExercise__li {
   list-style: none;

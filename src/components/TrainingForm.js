@@ -20,7 +20,6 @@ export default function TrainingForm() {
 
   return (
     <div className="training__exercise-form">
-      {/* <form> */}
       <div className="training__wrapper">
         <label className="training__exercise-input-label" htmlFor="exercise">
           Search for exercise
@@ -34,7 +33,6 @@ export default function TrainingForm() {
           onChange={(e) => setSearch(e.target.value)}
           value={search}
         />
-        {/* </form> */}{" "}
       </div>
       <ul>
         {suggestions

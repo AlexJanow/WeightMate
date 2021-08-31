@@ -41,50 +41,47 @@ export default function FirstInputs({
   console.log(usernameExist, exerciseExist, bwDataExist);
   return (
     <div>
-      {!exerciseExist ||
-        (!bwDataExist && (
-          <div>
-            {usernameExist && (
-              <div>
-                <motion.p
-                  variants={containerVariants}
-                  initial="hidden"
-                  animate="visibleOne"
-                  className="FirstInputs__p"
-                >
-                  Looks like your first time here!
-                </motion.p>
-                <motion.p
-                  variants={containerVariants}
-                  initial="hidden"
-                  animate="visibleTwo"
-                  className="FirstInputs__p"
-                >
-                  Start by logging your first weights:
-                </motion.p>
-                <motion.div
-                  variants={containerVariants}
-                  initial="hidden"
-                  animate="visibleThree"
-                  className="FirstInputs__choice-wrapper"
-                >
-                  {!bwDataExist && (
-                    <Link className="Link" to="/bodyweight">
-                      <p className="FirstInputs__choice-bodyweight">
-                        Bodyweight
-                      </p>
-                    </Link>
-                  )}
-                  {!exerciseExist && (
-                    <Link className="Link" to="/training">
-                      <p className="FirstInputs__choice-exercises">Exercises</p>
-                    </Link>
-                  )}
-                </motion.div>
-              </div>
-            )}
-          </div>
-        ))}
+      {(!exerciseExist || !bwDataExist) && (
+        <div>
+          {usernameExist && (
+            <div>
+              <motion.p
+                variants={containerVariants}
+                initial="hidden"
+                animate="visibleOne"
+                className="FirstInputs__p"
+              >
+                Looks like your first time here!
+              </motion.p>
+              <motion.p
+                variants={containerVariants}
+                initial="hidden"
+                animate="visibleTwo"
+                className="FirstInputs__p"
+              >
+                Start by logging your first weights:
+              </motion.p>
+              <motion.div
+                variants={containerVariants}
+                initial="hidden"
+                animate="visibleThree"
+                className="FirstInputs__choice-wrapper"
+              >
+                {!bwDataExist && (
+                  <Link className="Link" to="/bodyweight">
+                    <p className="FirstInputs__choice-bodyweight">Bodyweight</p>
+                  </Link>
+                )}
+                {!exerciseExist && (
+                  <Link className="Link" to="/training">
+                    <p className="FirstInputs__choice-exercises">Exercises</p>
+                  </Link>
+                )}
+              </motion.div>
+            </div>
+          )}
+        </div>
+      )}
     </div>
   );
 }
