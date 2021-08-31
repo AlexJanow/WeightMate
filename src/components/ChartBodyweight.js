@@ -1,12 +1,8 @@
 import { Line } from "react-chartjs-2";
 import "./ChartBodyweight.css";
 import { useState, useEffect } from "react";
-import React from "react";
-export default function ChartBodyweight({
-  bodyweightDataArray,
-  setBodyweightChartDataExist,
-  bodyweightChartDataExist,
-}) {
+
+export default function ChartBodyweight({ bodyweightDataArray, bwDataCheck }) {
   const [dates, setDates] = useState([]);
   const [weights, setWeights] = useState([]);
 
@@ -27,15 +23,11 @@ export default function ChartBodyweight({
       setDates([]);
       setWeights([]);
     };
-  }, [bodyweightDataArray]);
+  }, []);
 
-  // useEffect(() => {
-  //   if (dataSet.length !== 0) {
-  //     setBodyweightChartDataExist(true);
-  //   } else if (dataSet.length === 0) {
-  //    setBodyweightChartDataExist(false);
-  //   }
-  // }, [dataSet]);
+  useEffect(() => {
+    if (dataSet) bwDataCheck(dataSet);
+  }, [dataSet]);
 
   const labels = dates;
   const data = {

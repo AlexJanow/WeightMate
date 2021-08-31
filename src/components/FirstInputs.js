@@ -3,10 +3,7 @@ import "./FirstInputs.css";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
-export default function FirstInputs({
-  bodyweightChartDataExist,
-  usernameExist,
-}) {
+export default function FirstInputs({ bwDataExist, usernameExist }) {
   const containerVariants = {
     hidden: {
       opacity: 0,
@@ -37,10 +34,11 @@ export default function FirstInputs({
       },
     },
   };
-  console.log(usernameExist);
+  console.log(bwDataExist);
   return (
     <div>
-      {!bodyweightChartDataExist && (
+      {
+        //   bwDataExist &&
         <div>
           {usernameExist && (
             <div>
@@ -66,7 +64,7 @@ export default function FirstInputs({
                 animate="visibleThree"
                 className="FirstInputs__choice-wrapper"
               >
-                {!bodyweightChartDataExist && (
+                {!bwDataExist && (
                   <Link className="Link" to="/bodyweight">
                     <p className="FirstInputs__choice-bodyweight">Bodyweight</p>
                   </Link>
@@ -78,7 +76,7 @@ export default function FirstInputs({
             </div>
           )}
         </div>
-      )}
+      }
     </div>
   );
 }
