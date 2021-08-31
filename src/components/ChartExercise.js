@@ -3,13 +3,11 @@ import { Line } from "react-chartjs-2";
 import { useState, useEffect } from "react";
 import "./ChartExercise.css";
 
-export default function ChartExercise() {
+export default function ChartExercise({ exercisesExist }) {
   const [dates, setDates] = useState([]);
   const [maxWeight, setMaxWeight] = useState([]);
   const [selectedExercise, setSelectedExercise] = useState("");
-
   const exercises = [];
-
   Object.keys(localStorage).forEach((key) => {
     if (!isNaN(key)) {
       if (JSON.parse(localStorage.getItem(key)).length !== 0)
