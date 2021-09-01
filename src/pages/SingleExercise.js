@@ -30,7 +30,7 @@ export default function SingleExercise() {
   const { exerciseId } = useParams();
 
   const [exerciseLog, setExerciseLog] = useState([]);
-  console.log(exerciseLog);
+
   const [addToTraining, setAddToTraining] = useState([]);
 
   function handleSaveNewLog(newLog) {

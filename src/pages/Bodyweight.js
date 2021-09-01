@@ -14,7 +14,7 @@ export default function Bodyweight({ bwDataCheck }) {
   });
 
   return (
-    <div>
+    <div className="bodyweight__wrapper">
       <ChartBodyweight
         bodyweightDataArray={bodyweightDataArray}
         bwDataCheck={bwDataCheck}

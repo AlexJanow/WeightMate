@@ -1,3 +1,8 @@
+.bodyweight__wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
 .bodyweight__container {
   background-color: var(--primaryBackground);
 
@@ -13,9 +18,11 @@
   margin: auto;
   display: flex;
   flex-direction: column;
+  align-self: center;
   border-radius: 5px;
   margin-left: 0.5em;
   margin-right: 0.5em;
+  width: 80vw;
 }
 .bodyweight__data-container-ul {
   display: flex;
@@ -33,7 +40,4 @@
 
 .bodyweight__date {
   color: var(--primary);
-}
-#bodyweight__input {
-  width: 4rem;
 }

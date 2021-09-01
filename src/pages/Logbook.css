@@ -1,7 +1,8 @@
 .Logbook__select {
   background-color: var(--secondaryBackground);
   color: var(--secondary);
-  padding: 3%;
+  padding: 0.5em 1em 0.5em 1em;
+  width: 80vw;
   font-size: 1.5rem;
   border-radius: 5px;
 }

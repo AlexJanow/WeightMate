@@ -5,7 +5,7 @@
   background-color: var(--primaryBackground);
   color: var(--primary);
 
-  height: fit-content;
+  /* height: fit-content; */
 }
 
 .singleExercise__name {
@@ -32,6 +32,7 @@
 .singleExercise__accordion {
   margin-left: 0;
   margin-right: 0;
+  width: 100vw;
 }
 
 .singleExercise__button-train {
@@ -42,7 +43,7 @@
   padding: 3%;
   border-radius: 5px;
   font-size: 1.5rem;
-
+  width: 75vw;
   margin: 5%;
 }
 
@@ -64,4 +65,5 @@
   font-size: 1.5rem;
   border-radius: 5px;
   margin: 5%;
+  width: 75vw;
 }
