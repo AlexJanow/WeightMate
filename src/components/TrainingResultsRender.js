@@ -32,28 +32,30 @@ export default function TrainingResultsRender({ data }) {
   // }, [newPR]);
 
   return (
-    <ol className="singleExercise__trainingInputForm-display">
-      {data
-        .filter((data) => data.date === todayDate)
-        .map((set, index) => {
-          sets.push(maximumWeight(set.repetitions, set.weight));
-          return (
-            <li
-              key={set.setId}
-              className={`singleExercise__trainingInputForm-display-li ${
-                maxRM === maximumWeight(set.repetitions, set.weight)
-                  ? "pr"
-                  : null
-              }`}
-            >
-              {set.weight} kg {set.repetitions} x{" "}
-              {maxRM === maximumWeight(set.repetitions, set.weight)
-                ? // ? setNewPR(!newPR)
-                  "PR!"
-                : null}
-            </li>
-          );
-        })}
-    </ol>
+    <div className="singleExercise__trainingInputForm-display-wrapper">
+      <ol className="singleExercise__trainingInputForm-display">
+        {data
+          .filter((data) => data.date === todayDate)
+          .map((set, index) => {
+            sets.push(maximumWeight(set.repetitions, set.weight));
+            return (
+              <li
+                key={set.setId}
+                className={`singleExercise__trainingInputForm-display-li ${
+                  maxRM === maximumWeight(set.repetitions, set.weight)
+                    ? "pr"
+                    : null
+                }`}
+              >
+                {set.weight} kg {set.repetitions} x{" "}
+                {maxRM === maximumWeight(set.repetitions, set.weight)
+                  ? // ? setNewPR(!newPR)
+                    "PR!"
+                  : null}
+              </li>
+            );
+          })}
+      </ol>
+    </div>
   );
 }

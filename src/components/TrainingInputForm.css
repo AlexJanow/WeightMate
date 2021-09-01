@@ -12,6 +12,9 @@
   grid-column-start: 1;
   grid-column-end: 5;
   grid-row-start: 2;
+  font-size: 1.5rem;
+  padding: 0.5em 1em 0.5em 1em;
+  height: 2.3em;
 }
 
 .training__repetitions-input {
@@ -19,6 +22,9 @@
   grid-column-start: 1;
   grid-column-end: 5;
   grid-row-start: 3;
+  font-size: 1.5rem;
+  padding: 0.5em 1em 0.5em 1em;
+  height: 2.3em;
 }
 
 .training__repititions-button {

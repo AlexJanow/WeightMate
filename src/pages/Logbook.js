@@ -19,10 +19,16 @@ export default function Logbook() {
 
   return (
     <div>
+      <div className="Logbook__select-labelwrap">
+        <label className="Logbook__select-label" htmlFor="Logbook__select">
+          Choose a training day
+        </label>
+      </div>
       <select
         defaultValue={"DEFAULT"}
         className="Logbook__select"
         onChange={handleChange}
+        name="Logbook__select"
       >
         <option value="DEFAULT" disabled hidden>
           Choose a day

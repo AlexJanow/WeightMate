@@ -16,10 +16,12 @@
 
 .bodyweight__input {
   border-radius: 5px;
-  height: 2.6rem;
+  height: 2.5em;
   grid-column-start: 2;
   grid-column-end: 7;
   padding-left: 5px;
+  font-size: 1.5rem;
+  padding: 0.5em 1em 0.5em 1em;
 }
 
 .bodyweight__button {

@@ -10,46 +10,36 @@ import "./Footer.css";
 export default function Footer() {
   return (
     <footer>
-      <BottomNavigation
-      // value={value}
-      // onChange={handleChange}
-      // className={classes.root}
-      >
+      <BottomNavigation>
         <BottomNavigationAction
           component={Link}
           to="/"
           label="Home"
           value="home"
-          icon={<HomeIcon />}
+          icon={<HomeIcon fontSize="Large" />}
         />
         <BottomNavigationAction
           component={Link}
           to="/bodyweight"
           label="Bodyweight"
           value="bodyweight"
-          icon={<Icon path={mdiScaleBathroom} title="Bodyweight" size={1} />}
+          icon={<Icon path={mdiScaleBathroom} title="Bodyweight" size="35" />}
         />
         <BottomNavigationAction
           component={Link}
           to="/training"
           label="Training"
           value="training"
-          icon={<FitnessCenterIcon />}
+          icon={<FitnessCenterIcon fontSize="Large" />}
         />
         <BottomNavigationAction
           component={Link}
           to="/logbook"
           label="Logbook"
           value="logbook"
-          icon={<LibraryBooksIcon />}
+          icon={<LibraryBooksIcon fontSize="Large" />}
         />
       </BottomNavigation>
-      {/* <nav>
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/bodyweight">Bodyweight</NavLink>
-        <NavLink to="/training">Training</NavLink>
-        <NavLink to="/logbook">Logbook</NavLink>
-      </nav> */}
     </footer>
   );
 }
