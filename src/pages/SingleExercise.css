@@ -82,3 +82,31 @@
   margin: 5%;
   width: 75vw;
 }
+
+.singleExercise__repetition-table {
+  padding: 1em;
+  border-collapse: collapse;
+  border-radius: 5px;
+}
+
+.singleExercise__repetition-table th {
+  padding-top: 1em;
+}
+.singleExercise__repetition-table th,
+.singleExercise__repetition-table td {
+  border: 1px solid var(--secondary);
+  padding: 1px;
+}
+.singleExercise__repetition-table-wrapper {
+  background-color: var(--secondaryBackground);
+  color: var(--secondary);
+  border-radius: 5px;
+  padding: 5px;
+  width: 80vw;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.singleExercise__repetition-table-label {
+  font-size: 1.5rem;
+}

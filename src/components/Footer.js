@@ -5,6 +5,7 @@ import Icon from "@mdi/react";
 import { mdiScaleBathroom } from "@mdi/js";
 import FitnessCenterIcon from "@material-ui/icons/FitnessCenter";
 import LibraryBooksIcon from "@material-ui/icons/LibraryBooks";
+
 import "./Footer.css";
 
 export default function Footer() {

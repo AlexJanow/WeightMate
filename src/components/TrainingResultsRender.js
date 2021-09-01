@@ -2,9 +2,9 @@ import React from "react";
 import dayjs from "dayjs";
 import { useEffect, useState } from "react";
 import confetti from "canvas-confetti";
-export default function TrainingResultsRender({ data }) {
+export default function TrainingResultsRender({ data, maxRM, setMaxRM }) {
   const todayDate = dayjs().format("DD/MM/YYYY");
-  const [maxRM, setMaxRM] = useState([]);
+  // const [maxRM, setMaxRM] = useState([]);
   const [newPR, setNewPR] = useState(false);
   const sets = [];
   const maximumWeight = (repetitions, weight) => {

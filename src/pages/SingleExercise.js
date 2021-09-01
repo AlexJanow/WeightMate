@@ -32,6 +32,7 @@ export default function SingleExercise() {
   const [exerciseLog, setExerciseLog] = useState([]);
 
   const [addToTraining, setAddToTraining] = useState([]);
+  const [maxRM, setMaxRM] = useState([]);
 
   function handleSaveNewLog(newLog) {
     setExerciseLog([...exerciseLog, newLog]);
@@ -115,6 +116,44 @@ export default function SingleExercise() {
       <button onClick={handleToggle} className="singleExercise__button-train">
         {!isActive ? "show info" : "train exercise"}
       </button>
+
+      {!isActive &&
+        !(
+          maxRM === Number.POSITIVE_INFINITY ||
+          maxRM === Number.NEGATIVE_INFINITY
+        ) && (
+          <div className="singleExercise__repetition-table-wrapper">
+            <label
+              className="singleExercise__repetition-table-label"
+              htmlFor="repetition-table"
+            >
+              Repetition Calculation
+            </label>
+            <table
+              name="repetition-table"
+              className="singleExercise__repetition-table"
+            >
+              <tr>
+                <th>rep.</th>
+                <th>1</th>
+                <th>3</th>
+                <th>5</th>
+                <th>8</th>
+                <th>10</th>
+                <th>12</th>
+              </tr>
+              <tr>
+                <th>kg</th>
+                <th>{(maxRM * 1).toFixed(0)}</th>
+                <th>{(maxRM * 0.94).toFixed(0)}</th>
+                <th>{(maxRM * 0.89).toFixed(0)}</th>
+                <th>{(maxRM * 0.81).toFixed(0)}</th>
+                <th>{(maxRM * 0.75).toFixed(0)}</th>
+                <th>{(maxRM * 0.71).toFixed(0)}</th>
+              </tr>
+            </table>
+          </div>
+        )}
       {!isActive && (
         <TrainingInputForm
           onHandleSaveNewLog={handleSaveNewLog}
@@ -122,7 +161,13 @@ export default function SingleExercise() {
           exName={exerciseName}
         />
       )}
-      {!isActive && <TrainingResultsRender data={exerciseLog} />}
+      {!isActive && (
+        <TrainingResultsRender
+          maxRM={maxRM}
+          setMaxRM={setMaxRM}
+          data={exerciseLog}
+        />
+      )}
       {!isActive && (
         <button
           onClick={handleAddExercise}
