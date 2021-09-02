@@ -26,6 +26,7 @@ export default function BodyweightForm({
   };
 
   const handleSubmit = (e) => {
+    e.preventDefault();
     const weightInput = e.target.value;
     handleAdd(weightInput);
   };

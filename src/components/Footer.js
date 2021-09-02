@@ -1,46 +1,49 @@
-import { Link } from "react-router-dom";
-import { BottomNavigation, BottomNavigationAction } from "@material-ui/core";
-import HomeIcon from "@material-ui/icons/Home";
-import Icon from "@mdi/react";
-import { mdiScaleBathroom } from "@mdi/js";
-import FitnessCenterIcon from "@material-ui/icons/FitnessCenter";
-import LibraryBooksIcon from "@material-ui/icons/LibraryBooks";
+import { NavLink } from "react-router-dom";
+
+import { IoHomeSharp } from "react-icons/io5";
+import { FaWeight } from "react-icons/fa";
+import { GiWeightLiftingUp } from "react-icons/gi";
+import { MdLibraryBooks } from "react-icons/md";
 
 import "./Footer.css";
 
 export default function Footer() {
   return (
     <footer>
-      <BottomNavigation>
-        <BottomNavigationAction
-          component={Link}
+      <nav className="NavBar">
+        <NavLink
+          exact
           to="/"
-          label="Home"
-          value="home"
-          icon={<HomeIcon fontSize="Large" />}
-        />
-        <BottomNavigationAction
-          component={Link}
+          className="NavIcon"
+          activeClassName="NavIcon--active"
+        >
+          <IoHomeSharp />
+        </NavLink>
+        <NavLink
+          exact
           to="/bodyweight"
-          label="Bodyweight"
-          value="bodyweight"
-          icon={<Icon path={mdiScaleBathroom} title="Bodyweight" size="35" />}
-        />
-        <BottomNavigationAction
-          component={Link}
+          className="NavIcon"
+          activeClassName="NavIcon--active"
+        >
+          <FaWeight />
+        </NavLink>
+        <NavLink
+          exact
           to="/training"
-          label="Training"
-          value="training"
-          icon={<FitnessCenterIcon fontSize="Large" />}
-        />
-        <BottomNavigationAction
-          component={Link}
+          className="NavIcon"
+          activeClassName="NavIcon--active"
+        >
+          <GiWeightLiftingUp />
+        </NavLink>
+        <NavLink
+          exact
           to="/logbook"
-          label="Logbook"
-          value="logbook"
-          icon={<LibraryBooksIcon fontSize="Large" />}
-        />
-      </BottomNavigation>
+          className="NavIcon"
+          activeClassName="NavIcon--active"
+        >
+          <MdLibraryBooks />
+        </NavLink>
+      </nav>
     </footer>
   );
 }
