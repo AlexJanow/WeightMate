@@ -12,7 +12,7 @@ import { useHistory } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
-    // margin: "1%",
+    marginBottom: ".2em",
   },
   heading: {
     margin: "auto",

@@ -29,9 +29,7 @@
 }
 
 .singleExercise__accordion {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 1em;
+  margin-top: 0.2em;
   width: 80vw;
 }
 
@@ -96,13 +94,13 @@
 .singleExercise__repetition-table th,
 .singleExercise__repetition-table td {
   border: 1px solid var(--secondary);
-  padding: 1px;
+  padding: 0.1em;
 }
 .singleExercise__repetition-table-wrapper {
   background-color: var(--secondaryBackground);
   color: var(--secondary);
   border-radius: 5px;
-  padding: 5px;
+  padding: 0.5em;
   width: 80vw;
   margin-bottom: 10px;
   display: flex;

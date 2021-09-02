@@ -1,6 +1,6 @@
 import LogCard from "../components/LogCard";
 import "./Logbook.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Logbook() {
   // following regex is checking format is dd/mm/yyyy
@@ -25,12 +25,11 @@ export default function Logbook() {
         </label>
       </div>
       <select
-        defaultValue={"DEFAULT"}
         className="Logbook__select"
         onChange={handleChange}
         name="Logbook__select"
       >
-        <option value="DEFAULT" disabled hidden>
+        <option value="DEFAULT" selected disabled hidden>
           Choose a day
         </option>
         {workouts.map((workout) => (

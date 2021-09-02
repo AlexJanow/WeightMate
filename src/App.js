@@ -7,7 +7,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import { useEffect } from "react";
 function App() {
   useEffect(() => {
-    document.title = "Weight Mate";
+    document.title = "WeightMate";
   }, []);
   return (
     <>
