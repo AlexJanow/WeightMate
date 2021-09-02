@@ -44,7 +44,7 @@ export default function TrainingInputForm({
         placeholder="repetitions"
         required
       />
-      <button className="training__repititions-button">+</button>
+      <button className="training__addSet-button">+</button>
     </form>
   );
 }

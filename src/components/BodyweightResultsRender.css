@@ -8,30 +8,25 @@
 }
 
 .bodyweight__form-wrapper {
-  display: grid;
-  grid-template-columns: 20px 1fr 1fr 1fr 1fr 1fr 1fr 20px;
-  grid-template-rows: 1fr;
-  /* width: 80vw; */
+  display: flex;
+  margin-bottom: 1em;
 }
 
 .bodyweight__input {
   border-radius: 5px;
-  height: 2.5em;
-  grid-column-start: 2;
-  grid-column-end: 7;
-  padding-left: 5px;
   font-size: 1.5rem;
-  padding: 0.5em 1em 0.5em 1em;
+  max-width: 60vw;
+  padding: 0.5em 1em 0.5em 0;
 }
-
+.bodyweight__input,
+textarea {
+  padding-left: 0.5rem;
+}
 .bodyweight__button {
   all: unset;
   background-color: var(--secondaryBackground);
   color: var(--secondary);
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-bottom: 3px;
-
+  padding: 0 1em 3px 1em;
   border-radius: 5px;
   font-size: 2rem;
 }

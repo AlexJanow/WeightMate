@@ -21,7 +21,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   display: flex;
   flex-direction: column;
-  max-width: 375px;
 }
 
 code {

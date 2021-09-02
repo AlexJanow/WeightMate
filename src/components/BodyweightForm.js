@@ -6,10 +6,10 @@ export default function BodyweightForm({
   bodyweightDataArray,
   setBodyweightDataArray,
 }) {
-  const date = dayjs().format("DD/MM/YYYY");
+  const date = dayjs().format("DD.MM.YY");
 
   const [bodyweightData, setBodyweightData] = useState({
-    id: uuidv4(),
+    id: "",
     date,
     weight: "",
   });
@@ -43,7 +43,11 @@ export default function BodyweightForm({
         // width="200"
         placeholder="bodyweight in kg"
         onChange={(e) =>
-          setBodyweightData({ ...bodyweightData, weight: e.target.value })
+          setBodyweightData({
+            ...bodyweightData,
+            id: uuidv4(),
+            weight: e.target.value,
+          })
         }
       />
       <button className="bodyweight__button" type="submit">

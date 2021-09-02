@@ -1,11 +1,9 @@
 import React from "react";
 import dayjs from "dayjs";
 import { useEffect, useState } from "react";
-import confetti from "canvas-confetti";
+
 export default function TrainingResultsRender({ data, maxRM, setMaxRM }) {
   const todayDate = dayjs().format("DD/MM/YYYY");
-  // const [maxRM, setMaxRM] = useState([]);
-  const [newPR, setNewPR] = useState(false);
   const sets = [];
   const maximumWeight = (repetitions, weight) => {
     if (repetitions <= 9) {
@@ -16,6 +14,7 @@ export default function TrainingResultsRender({ data, maxRM, setMaxRM }) {
       return result;
     }
   };
+
   const getMaxOfArray = (array) => {
     return Math.max.apply(null, array);
   };
@@ -23,13 +22,6 @@ export default function TrainingResultsRender({ data, maxRM, setMaxRM }) {
   useEffect(() => {
     setMaxRM(getMaxOfArray(sets));
   }, [sets]);
-
-  // useEffect(() => {
-  //   // confetti();
-
-  //   let message = "PR!";
-  //   return message;
-  // }, [newPR]);
 
   return (
     <div className="singleExercise__trainingInputForm-display-wrapper">
@@ -49,8 +41,7 @@ export default function TrainingResultsRender({ data, maxRM, setMaxRM }) {
               >
                 {set.weight} kg {set.repetitions} x{" "}
                 {maxRM === maximumWeight(set.repetitions, set.weight)
-                  ? // ? setNewPR(!newPR)
-                    "PR!"
+                  ? "PR!"
                   : null}
               </li>
             );

@@ -6,8 +6,6 @@ export default function ChartBodyweight({ bodyweightDataArray, bwDataCheck }) {
   const [dates, setDates] = useState([]);
   const [weights, setWeights] = useState([]);
 
-  // const dataSet = JSON.parse(localStorage.getItem("bodyweightDataArray"));
-  console.log(bodyweightDataArray);
   useEffect(() => {
     if (bodyweightDataArray) {
       bodyweightDataArray
@@ -18,10 +16,10 @@ export default function ChartBodyweight({ bodyweightDataArray, bwDataCheck }) {
         .map((data) => setWeights((elements) => [...elements, data.weight]));
     }
 
-    // return function cleanup() {
-    //   setDates([]);
-    //   setWeights([]);
-    // };
+    return function cleanup() {
+      setDates([]);
+      setWeights([]);
+    };
   }, [bodyweightDataArray]);
 
   useEffect(() => {

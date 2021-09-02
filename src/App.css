@@ -1,13 +1,11 @@
 .App {
   text-align: center;
-  padding: 3rem 1rem 0 1rem;
-  /* background: linear-gradient(var(--tertiaryColor), var(--secondary)); */
+  padding: 3em 1.5em 0 1.5em;
   background: var(--primaryBackground);
   background-size: cover;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  max-width: 375px;
 }
 
 button:hover {

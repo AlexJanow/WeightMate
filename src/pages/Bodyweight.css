@@ -15,13 +15,12 @@
 .bodyweight__data-container {
   background-color: var(--secondaryBackground);
   height: auto;
-  margin: auto;
+
   display: flex;
   flex-direction: column;
   align-self: center;
   border-radius: 5px;
-  margin-left: 0.5em;
-  margin-right: 0.5em;
+
   width: 80vw;
 }
 .bodyweight__data-container-ul {
@@ -33,11 +32,12 @@
   font-weight: bold;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
-  font-size: 1.3em;
+  font-size: 1.3rem;
 
   background-color: var(--tertiaryLowOpacity);
 }
 
 .bodyweight__date {
   color: var(--primary);
+  font-size: 1.3rem;
 }
