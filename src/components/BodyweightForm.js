@@ -6,7 +6,7 @@ export default function BodyweightForm({
   bodyweightDataArray,
   setBodyweightDataArray,
 }) {
-  const date = dayjs().format("DD.MM.YY");
+  const date = dayjs().format("DD/MM/YY");
 
   const [bodyweightData, setBodyweightData] = useState({
     id: "",

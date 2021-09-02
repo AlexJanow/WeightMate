@@ -31,7 +31,8 @@
 .singleExercise__accordion {
   margin-left: 0;
   margin-right: 0;
-  width: 100vw;
+  margin-top: 1em;
+  width: 80vw;
 }
 
 .singleExercise__button-train {

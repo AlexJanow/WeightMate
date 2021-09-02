@@ -7,7 +7,7 @@ import { useState } from "react";
 import { getItemsFromLocalStorage } from "../utils/itemStorage";
 
 export default function Bodyweight({ bwDataCheck }) {
-  const date = dayjs().format("DD.MM.YYYY");
+  const date = dayjs().format("DD/MM/YYYY");
   const [bodyweightDataArray, setBodyweightDataArray] = useState(() => {
     const saved = getItemsFromLocalStorage("bodyweightDataArray");
     return saved || [];

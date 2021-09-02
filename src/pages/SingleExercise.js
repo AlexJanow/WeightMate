@@ -11,8 +11,8 @@ import TrainingResultsRender from "../components/TrainingResultsRender";
 import { useHistory } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: "80%",
-    margin: "1%",
+    width: "100%",
+    // margin: "1%",
   },
   heading: {
     margin: "auto",
