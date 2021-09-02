@@ -5,10 +5,13 @@
   /* padding: 10px; */
 }
 .training__wrapper {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  justify-items: center;
+  /* display: grid; */
+  /* grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(3, 1fr); */
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
   row-gap: 5px;
 }
 .training__exercise-form input,
@@ -18,17 +21,11 @@ textarea {
   font-size: 1.5rem;
 }
 .training__exercise-input-label {
-  grid-column-start: 1;
-  grid-column-end: 6;
   font-size: 1.5rem;
   padding: 0.5em 1em 0.5em 1em;
 }
 .training__exercise-input {
-  grid-column-start: 2;
-  grid-column-end: 5;
-  grid-row-start: 2;
   width: 80vw;
-
   padding: 0.5em 1em 0.5em 1em;
 }
 

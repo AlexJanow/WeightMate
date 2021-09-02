@@ -1,6 +1,8 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { ToolTipsSearchExercise } from "../utils/ToolTips";
+
 export default function TrainingForm() {
   const [search, setSearch] = useState("");
   const [result, setResult] = useState("");
@@ -21,6 +23,7 @@ export default function TrainingForm() {
   return (
     <div className="training__exercise-form">
       <div className="training__wrapper">
+        <ToolTipsSearchExercise />
         <label className="training__exercise-input-label" htmlFor="exercise">
           Search for exercise
         </label>
