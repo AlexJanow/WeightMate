@@ -47,7 +47,11 @@ export default function ChartBodyweight({ bodyweightDataArray, bwDataCheck }) {
   };
 
   return (
-    <div className="chart__bodyweight">
+    <div
+      className={`chart__bodyweight${
+        bodyweightDataArray.length !== 0 ? " hasData" : ""
+      }`}
+    >
       {weights.length !== 0 && <Line data={data} height={200} width={300} />}
     </div>
   );
