@@ -1,10 +1,13 @@
 import React from "react";
 import dayjs from "dayjs";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo } from "react";
 
 export default function TrainingResultsRender({ data, maxRM, setMaxRM }) {
   const todayDate = dayjs().format("DD/MM/YYYY");
-  const sets = [];
+  // const sets = [];
+  const sets = useMemo(() => {
+    if (data) return [];
+  }, [data]);
   const maximumWeight = (repetitions, weight) => {
     if (repetitions <= 9) {
       const result = weight * (36 / (37 - repetitions));
@@ -21,7 +24,7 @@ export default function TrainingResultsRender({ data, maxRM, setMaxRM }) {
 
   useEffect(() => {
     setMaxRM(getMaxOfArray(sets));
-  }, [sets]);
+  }, [sets, setMaxRM]);
 
   return (
     <div className="singleExercise__trainingInputForm-display-wrapper">

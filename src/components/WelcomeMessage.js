@@ -52,7 +52,7 @@ export default function WelcomeMessage({ setUsernameExist }) {
     } else {
       setUsernameExist(false);
     }
-  }, [userName]);
+  }, [userName, setUsernameExist]);
 
   useEffect(() => {
     const savedName = JSON.parse(localStorage.getItem("userName"));
@@ -66,7 +66,7 @@ export default function WelcomeMessage({ setUsernameExist }) {
           : "Good evening"
       }, ${userName} `
     );
-  }, [userName]);
+  }, [userName, hoursNow]);
 
   const handleSubmit = (event) => {
     event.preventDefault();

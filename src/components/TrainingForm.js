@@ -18,7 +18,7 @@ export default function TrainingForm() {
           setResult(data);
         });
     }
-  }, [search]);
+  }, [search, url]);
 
   return (
     <div className="training__exercise-form">

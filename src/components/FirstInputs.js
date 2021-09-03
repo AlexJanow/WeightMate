@@ -38,7 +38,7 @@ export default function FirstInputs({
       },
     },
   };
-  console.log(usernameExist, exerciseExist, bwDataExist);
+
   return (
     <div>
       {(!exerciseExist || !bwDataExist) && (

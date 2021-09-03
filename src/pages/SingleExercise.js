@@ -101,9 +101,11 @@ export default function SingleExercise() {
         <div className="singleExercise__img">
           <img
             src={exerciseData?.images ? exerciseData?.images[0]?.image : null}
+            alt=""
           />
           <img
             src={exerciseData?.images ? exerciseData?.images[1]?.image : null}
+            alt=""
           />
         </div>
       )}
@@ -133,24 +135,26 @@ export default function SingleExercise() {
               name="repetition-table"
               className="singleExercise__repetition-table"
             >
-              <tr>
-                <th>rep.</th>
-                <th>1</th>
-                <th>3</th>
-                <th>5</th>
-                <th>8</th>
-                <th>10</th>
-                <th>12</th>
-              </tr>
-              <tr>
-                <th>kg</th>
-                <th>{(maxRM * 1).toFixed(0)}</th>
-                <th>{(maxRM * 0.94).toFixed(0)}</th>
-                <th>{(maxRM * 0.89).toFixed(0)}</th>
-                <th>{(maxRM * 0.81).toFixed(0)}</th>
-                <th>{(maxRM * 0.75).toFixed(0)}</th>
-                <th>{(maxRM * 0.71).toFixed(0)}</th>
-              </tr>
+              <tbody>
+                <tr>
+                  <th>rep.</th>
+                  <th>1</th>
+                  <th>3</th>
+                  <th>5</th>
+                  <th>8</th>
+                  <th>10</th>
+                  <th>12</th>
+                </tr>
+                <tr>
+                  <th>kg</th>
+                  <th>{(maxRM * 1).toFixed(0)}</th>
+                  <th>{(maxRM * 0.94).toFixed(0)}</th>
+                  <th>{(maxRM * 0.89).toFixed(0)}</th>
+                  <th>{(maxRM * 0.81).toFixed(0)}</th>
+                  <th>{(maxRM * 0.75).toFixed(0)}</th>
+                  <th>{(maxRM * 0.71).toFixed(0)}</th>
+                </tr>
+              </tbody>
             </table>
           </div>
         )}

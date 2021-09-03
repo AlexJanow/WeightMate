@@ -24,7 +24,7 @@ export default function ChartBodyweight({ bodyweightDataArray, bwDataCheck }) {
 
   useEffect(() => {
     if (bodyweightDataArray) bwDataCheck(bodyweightDataArray);
-  }, [bodyweightDataArray]);
+  }, [bodyweightDataArray, bwDataCheck]);
 
   const labels = dates;
   const data = {

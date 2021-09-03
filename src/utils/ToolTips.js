@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import ReactTooltip from "react-tooltip";
 import "./ToolTips.css";
 import { AiOutlineInfoCircle } from "react-icons/ai";
