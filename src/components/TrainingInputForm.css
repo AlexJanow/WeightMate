@@ -3,8 +3,8 @@
   grid-template-columns: 3fr 1fr;
   grid-template-rows: 1fr 1fr;
   grid-gap: 1%;
-  margin-bottom: 2em;
-  margin-top: 1em;
+  margin-bottom: 1em;
+  /* margin-top: 1em; */
   width: 80vw;
 }
 

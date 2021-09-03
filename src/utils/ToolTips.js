@@ -22,3 +22,23 @@ export function ToolTipsSearchExercise() {
     </div>
   );
 }
+
+export function ToolTipsRepetitionCalculation() {
+  const trainingSearchTip = `With your first weight and repetition input this table calculates the practicable weight for your repetition goals`;
+
+  return (
+    <div>
+      <a data-tip={trainingSearchTip} data-event="click focus">
+        <AiOutlineInfoCircle className="ToolTips__infoIcon" />
+      </a>
+      <ReactTooltip
+        globalEventOff="click"
+        type="dark"
+        multiline={true}
+        className="ToolTips__toolTip"
+        effect="solid"
+        place="bottom"
+      />
+    </div>
+  );
+}

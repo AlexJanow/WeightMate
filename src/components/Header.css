@@ -5,6 +5,7 @@ header {
   background-color: var(--secondaryBackground);
   color: var(--secondary);
   width: 100%;
+  z-index: 1000;
 }
 h1 {
   font-family: "Rubik", sans-serif;

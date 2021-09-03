@@ -7,7 +7,7 @@ import dayjs from "dayjs";
 import "./SingleExercise.css";
 import TrainingInputForm from "../components/TrainingInputForm";
 import TrainingResultsRender from "../components/TrainingResultsRender";
-
+import { ToolTipsRepetitionCalculation } from "../utils/ToolTips";
 import { useHistory } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -125,6 +125,7 @@ export default function SingleExercise() {
           maxRM === Number.NEGATIVE_INFINITY
         ) && (
           <div className="singleExercise__repetition-table-wrapper">
+            <ToolTipsRepetitionCalculation />
             <label
               className="singleExercise__repetition-table-label"
               htmlFor="repetition-table"
