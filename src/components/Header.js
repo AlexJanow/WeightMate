@@ -4,7 +4,9 @@ import { ReactComponent as Logo } from "../img/Logo.svg";
 export default function Header() {
   return (
     <header>
-      <Logo className="Header__Logo" />
+      <div className="Header__Logo-wrapper">
+        <Logo className="Header__Logo" />
+      </div>
       <Switch>
         <Route path="/bodyweight">
           <h1>Bodyweight</h1>

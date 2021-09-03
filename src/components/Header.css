@@ -4,12 +4,13 @@ header {
   top: 0;
   display: flex;
   justify-content: space-between;
-
-  background-color: var(--primaryBackground);
+  align-content: center;
   color: var(--primary);
   width: 100%;
   z-index: 1000;
   border-bottom: var(--primary) 1px solid;
+  overflow: hidden;
+  max-height: 80px;
 }
 h1 {
   font-family: "Rubik", sans-serif;
@@ -19,6 +20,20 @@ h1 {
 }
 
 .Header__Logo {
+  position: relative;
   height: 80px;
+
   width: fit-content;
+}
+
+.Header__Logo-wrapper::before {
+  content: "";
+  position: absolute;
+  height: 160px;
+  width: 160px;
+  background: hsl(0, 0%, 50%);
+  border: 1px solid var(--primary);
+  border-radius: 50%;
+  top: -40px;
+  left: -40px;
 }
