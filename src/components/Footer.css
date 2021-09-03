@@ -20,3 +20,10 @@ footer {
 .NavIcon--active {
   color: var(--tertiaryColor);
 }
+
+.GiWeightLiftingUp svg {
+  fill: var(--primary);
+  background-color: var(--primaryBackground);
+  padding: 0.03em;
+  border-radius: 3px;
+}
