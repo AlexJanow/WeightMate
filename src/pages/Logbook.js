@@ -24,7 +24,6 @@ export default function Logbook() {
   const handleChange = (e) => {
     setSelectedWorkout(e.target.value);
   };
-  console.log(selectedWorkout);
   return (
     <div>
       {workouts.length !== 0 && (
@@ -39,13 +38,9 @@ export default function Logbook() {
           className="Logbook__select"
           onChange={handleChange}
           name="Logbook__select"
+          defaultValue={workouts[workouts.length - 1]}
         >
-          <option
-            value={workouts[workouts.length - 1]}
-            selected
-            disabled
-            hidden
-          >
+          <option value={workouts[workouts.length - 1]} disabled hidden>
             {workouts[workouts.length - 1]}
           </option>
           {workouts.map((workout) => (
