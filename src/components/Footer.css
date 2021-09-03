@@ -2,9 +2,32 @@ footer {
   position: fixed;
   left: 0;
   bottom: 0;
-  width: 375px;
+  width: 100%;
   background: var(--secondaryBackground);
   color: var(--secondary);
+}
+.NavBar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.NavIcon {
+  font-size: 2rem;
+  color: var(--secondary);
+  padding: 0.5em;
+}
 
-  flex: 0 0 60px;
+.NavIcon--active {
+  color: var(--tertiaryColor);
+}
+
+.GiWeightLiftingUp svg {
+  fill: var(--primary);
+  background-color: var(--primaryBackground);
+  padding: 0.03em;
+  border-radius: 3px;
+}
+
+.NavIcon-GiWeightLiftingUp--active svg {
+  background-color: var(--tertiaryColor);
 }

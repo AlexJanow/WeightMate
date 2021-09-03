@@ -1,7 +1,40 @@
 .Logbook__select {
   background-color: var(--secondaryBackground);
   color: var(--secondary);
-  padding: 3%;
+  padding: 0.5em 1em 0.5em 1em;
+  width: 80vw;
   font-size: 1.5rem;
   border-radius: 5px;
+  text-align-last: center;
+}
+
+.Logbook__select-label {
+  font-size: 1.5rem;
+  color: var(--primary);
+}
+.Logbook__select-labelwrap {
+  margin: 1em;
+}
+
+.Logbook__exercise-button {
+  font-size: 2rem;
+  font-weight: bold;
+  background-color: var(--secondaryBackground);
+  color: var(--secondary);
+  border: 1px solid var(--primary);
+  border-radius: 5px;
+  padding: 3px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 80vw;
+  margin: auto;
+}
+
+.Logbook__exercise-info {
+  background-color: var(--secondaryBackground);
+  color: var(--secondary);
+  padding: 1em;
+  border-radius: 5px;
+  width: 80vw;
+  margin: 1em auto 0.5em;
+  font-size: 1.5rem;
 }

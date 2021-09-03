@@ -1,32 +1,27 @@
 .training__exercise-form {
   background-color: var(--primaryBackground);
   color: var(--primary);
-
-  padding: 10px;
 }
 .training__wrapper {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  justify-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
   row-gap: 5px;
 }
 .training__exercise-form input,
 textarea {
   border-radius: 5px;
-  height: 2.6rem;
-  font-size: 1.2rem;
-}
-.training__exercise-input-label {
-  grid-column-start: 2;
-  grid-column-end: 5;
+  height: 2.3em;
   font-size: 1.5rem;
 }
+.training__exercise-input-label {
+  font-size: 1.5rem;
+  padding: 0.5em 1em 0.5em 1em;
+}
 .training__exercise-input {
-  grid-column-start: 2;
-  grid-column-end: 5;
-  grid-row-start: 2;
-  width: 60vw;
+  width: 80vw;
+  padding: 0.5em 1em 0.5em 1em;
 }
 
 .training__exercise-select {
@@ -44,6 +39,7 @@ textarea {
   border: 1px solid var(--tertiaryLowOpacity);
   padding: 5px;
   margin: 5px;
+  font-size: 1.2rem;
 }
 
 .training__result-li:nth-child(odd) {

@@ -1,7 +1,6 @@
 .bodyweight__results-render-li {
   list-style: none;
-  color: var(--secondary);
-  /* margin: 1em; */
+
   font-size: 1.2rem;
   margin-top: 1em;
   margin-bottom: 1em;
@@ -9,25 +8,25 @@
 }
 
 .bodyweight__form-wrapper {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(5, 1fr);
+  display: flex;
+  margin-bottom: 1em;
 }
 
 .bodyweight__input {
   border-radius: 5px;
-  height: 2.6rem;
-  grid-column-start: 3;
+  font-size: 1.5rem;
+  max-width: 60vw;
+  padding: 0.5em 1em 0.5em 0;
 }
-
+.bodyweight__input,
+textarea {
+  padding-left: 0.5rem;
+}
 .bodyweight__button {
   all: unset;
   background-color: var(--secondaryBackground);
   color: var(--secondary);
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-bottom: 3px;
-
+  padding: 0 1em 3px 1em;
   border-radius: 5px;
   font-size: 2rem;
 }

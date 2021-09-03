@@ -11,18 +11,32 @@ export default function WelcomeMessage({ setUsernameExist }) {
   const containerVariants = {
     hidden: {
       opacity: 0,
-      x: "100vw",
+      y: "100",
     },
-    visible: {
+    visibleOne: {
       opacity: 1,
-      x: 0,
+      y: 0,
+      transition: {
+        type: "spring",
+      },
+    },
+    visibleTwo: {
+      opacity: 1,
+      y: 0,
       transition: {
         type: "spring",
         delay: 0.5,
       },
     },
+    visibleThree: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        type: "spring",
+        delay: 4,
+      },
+    },
   };
-
   const hoursNow = dayjs().format("HH");
   const [userName, setUserName] = useState("");
   const [message, setMessage] = useState("");
@@ -38,7 +52,7 @@ export default function WelcomeMessage({ setUsernameExist }) {
     } else {
       setUsernameExist(false);
     }
-  }, [userName]);
+  }, [userName, setUsernameExist]);
 
   useEffect(() => {
     const savedName = JSON.parse(localStorage.getItem("userName"));
@@ -52,11 +66,10 @@ export default function WelcomeMessage({ setUsernameExist }) {
           : "Good evening"
       }, ${userName} `
     );
-  }, [userName]);
+  }, [userName, hoursNow]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setTimeout(() => {}, 3000);
     const form = event.target;
     const newUserName = form.name.value;
 
@@ -67,9 +80,9 @@ export default function WelcomeMessage({ setUsernameExist }) {
     <div className="WelcomeMessage__wrapper">
       {userName.length === 0 && (
         <motion.form
-          initial={{ x: "500" }}
-          animate={{ x: 0 }}
-          transition={{ delay: 0.1 }}
+          variants={containerVariants}
+          initial="hidden"
+          animate="visibleOne"
           onSubmit={handleSubmit}
         >
           <div>
@@ -88,8 +101,9 @@ export default function WelcomeMessage({ setUsernameExist }) {
       )}
       {userName.length !== 0 && (
         <motion.p
-          initial={{ x: "500" }}
-          animate={{ x: 0 }}
+          variants={containerVariants}
+          initial="hidden"
+          animate="visibleTwo"
           className="WelcomeMessage__message"
         >
           {message}

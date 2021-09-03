@@ -1,6 +1,11 @@
 .chart__bodyweight {
   background-color: var(--primaryBackground);
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
   padding: 0.5em;
+  margin: 0.5em;
   border-radius: 5px;
+}
+
+.hasData {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }

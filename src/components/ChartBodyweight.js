@@ -6,28 +6,25 @@ export default function ChartBodyweight({ bodyweightDataArray, bwDataCheck }) {
   const [dates, setDates] = useState([]);
   const [weights, setWeights] = useState([]);
 
-  const dataSet = JSON.parse(localStorage.getItem("bodyweightDataArray"));
   useEffect(() => {
-    if (dataSet) {
-      dataSet
-        .slice(Math.max(dataSet.length - 10, 0))
+    if (bodyweightDataArray) {
+      bodyweightDataArray
+        .slice(Math.max(bodyweightDataArray.length - 10, 0))
         .map((data) => setDates((elements) => [...elements, data.date]));
-      dataSet
-        .slice(Math.max(dataSet.length - 10, 0))
+      bodyweightDataArray
+        .slice(Math.max(bodyweightDataArray.length - 10, 0))
         .map((data) => setWeights((elements) => [...elements, data.weight]));
-    } else {
-      return;
     }
 
     return function cleanup() {
       setDates([]);
       setWeights([]);
     };
-  }, []);
+  }, [bodyweightDataArray]);
 
   useEffect(() => {
-    if (dataSet) bwDataCheck(dataSet);
-  }, [dataSet]);
+    if (bodyweightDataArray) bwDataCheck(bodyweightDataArray);
+  }, [bodyweightDataArray, bwDataCheck]);
 
   const labels = dates;
   const data = {
@@ -50,7 +47,11 @@ export default function ChartBodyweight({ bodyweightDataArray, bwDataCheck }) {
   };
 
   return (
-    <div className="chart__bodyweight">
+    <div
+      className={`chart__bodyweight${
+        bodyweightDataArray.length !== 0 ? " hasData" : ""
+      }`}
+    >
       {weights.length !== 0 && <Line data={data} height={200} width={300} />}
     </div>
   );

@@ -21,6 +21,7 @@ export default function Home({ bwDataCheck, bwDataExist }) {
           setExerciseExist(!exerciseExist);
       }
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const containerVariants = {
@@ -69,6 +70,7 @@ export default function Home({ bwDataCheck, bwDataExist }) {
         <ChartBodyweight
           bwDataCheck={bwDataCheck}
           bodyweightDataArray={bodyweightDataArray}
+          setBodyweightDataArray={setBodyweightDataArray}
         />
       </motion.div>
       <motion.div

@@ -26,7 +26,7 @@ export default function ChartExercise({ exercisesExist }) {
 
     dataSet?.map((data) => setDates((elements) => [...elements, data.date]));
 
-    dataSet?.map((set) => {
+    dataSet?.forEach((set) => {
       if (set.repetitions <= 9) {
         setMaxWeight((elements) => [
           ...elements,

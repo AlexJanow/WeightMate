@@ -3,10 +3,16 @@ import "./App.css";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import ScrollToTop from "./components/ScrollToTop";
+import { useEffect } from "react";
 function App() {
+  useEffect(() => {
+    document.title = "WeightMate";
+  }, []);
   return (
     <>
       <Router>
+        <ScrollToTop />
         <div className="App">
           <Header />
           <Main />

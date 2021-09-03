@@ -4,8 +4,6 @@
   align-items: center;
   background-color: var(--primaryBackground);
   color: var(--primary);
-
-  height: fit-content;
 }
 
 .singleExercise__name {
@@ -24,14 +22,15 @@
 .singleExercise__li {
   list-style: none;
 }
+
 .singleExercise__li :hover {
   font-weight: 900;
   text-decoration: underline var(--primary);
 }
 
 .singleExercise__accordion {
-  margin-left: 0;
-  margin-right: 0;
+  margin-top: 0.2em;
+  width: 80vw;
 }
 
 .singleExercise__button-train {
@@ -42,7 +41,7 @@
   padding: 3%;
   border-radius: 5px;
   font-size: 1.5rem;
-
+  width: 75vw;
   margin: 5%;
 }
 
@@ -50,9 +49,25 @@
   padding-top: 5%;
   padding-bottom: 5%;
   font-size: 1.3rem;
+  list-style-position: inside;
+  color: var(--secondary);
 }
+.singleExercise__trainingInputForm-display-wrapper {
+  background-color: var(--secondaryBackground);
+  height: auto;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  border-radius: 5px;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  width: 80vw;
+}
+
 .pr {
-  color: green;
+  color: var(--primary);
+  background-color: green;
 }
 .singleExercise__button-finish {
   all: unset;
@@ -63,5 +78,36 @@
   color: var(--secondary);
   font-size: 1.5rem;
   border-radius: 5px;
-  margin: 5%;
+  margin: 0.5em;
+  width: 75vw;
+}
+
+.singleExercise__repetition-table {
+  padding: 1em;
+  border-collapse: collapse;
+  border-radius: 5px;
+}
+
+.singleExercise__repetition-table th {
+  padding-top: 1em;
+}
+.singleExercise__repetition-table th,
+.singleExercise__repetition-table td {
+  border: 1px solid var(--secondary);
+  padding: 0.1em;
+}
+.singleExercise__repetition-table-wrapper {
+  background-color: var(--secondaryBackground);
+  color: var(--secondary);
+  border-radius: 5px;
+  padding: 0.5em;
+  width: 80vw;
+  margin-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.singleExercise__repetition-table-label {
+  font-size: 1.5rem;
 }

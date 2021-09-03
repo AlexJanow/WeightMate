@@ -14,24 +14,22 @@ export default function Bodyweight({ bwDataCheck }) {
   });
 
   return (
-    <div>
+    <div className="bodyweight__wrapper">
       <ChartBodyweight
         bodyweightDataArray={bodyweightDataArray}
         bwDataCheck={bwDataCheck}
       />
       <div className="bodyweight__container">
-        <div className="bodyweight__date">
-          {date}
-          <BodyweightForm
-            bodyweightDataArray={bodyweightDataArray}
-            setBodyweightDataArray={setBodyweightDataArray}
-          />
-        </div>
+        <div className="bodyweight__date">{date}</div>
+        <BodyweightForm
+          bodyweightDataArray={bodyweightDataArray}
+          setBodyweightDataArray={setBodyweightDataArray}
+        />
       </div>
       <div className="bodyweight__data-container">
         <h3 className="bodyweight__data-container_title">Bodyweight Logbook</h3>
         <ul className="bodyweight__data-container-ul">
-          <BodyweightResultsRender />
+          <BodyweightResultsRender bodyweightDataArray={bodyweightDataArray} />
         </ul>
       </div>
     </div>
