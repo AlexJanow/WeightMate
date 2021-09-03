@@ -2,13 +2,23 @@ header {
   position: fixed;
   left: 0;
   top: 0;
-  background-color: var(--secondaryBackground);
-  color: var(--secondary);
+  display: flex;
+  justify-content: space-between;
+
+  background-color: var(--primaryBackground);
+  color: var(--primary);
   width: 100%;
   z-index: 1000;
+  border-bottom: var(--primary) 1px solid;
 }
 h1 {
   font-family: "Rubik", sans-serif;
-  font-weight: 400;
+  font-weight: 900;
   padding: 10px;
+  align-self: center;
+}
+
+.Header__Logo {
+  height: 80px;
+  width: fit-content;
 }

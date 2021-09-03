@@ -16,6 +16,8 @@ const useStyles = makeStyles((theme) => ({
   },
   heading: {
     margin: "auto",
+    fontSize: "1.2rem",
+    fontFamily: ['"Rubik'],
   },
 }));
 export default function SingleExercise() {
