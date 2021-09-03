@@ -40,7 +40,6 @@ export default function BodyweightForm({
         className="bodyweight__input"
         name="bodyweight__input"
         required
-        // width="200"
         placeholder="bodyweight in kg"
         onChange={(e) =>
           setBodyweightData({
