@@ -70,7 +70,6 @@ export default function WelcomeMessage({ setUsernameExist }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setTimeout(() => {}, 3000);
     const form = event.target;
     const newUserName = form.name.value;
 

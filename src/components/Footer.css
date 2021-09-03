@@ -27,3 +27,7 @@ footer {
   padding: 0.03em;
   border-radius: 3px;
 }
+
+.NavIcon-GiWeightLiftingUp--active svg {
+  background-color: var(--tertiaryColor);
+}

@@ -31,7 +31,7 @@ export default function Footer() {
           exact
           to="/training"
           className="NavIcon GiWeightLiftingUp"
-          activeClassName="NavIcon--active"
+          activeClassName="NavIcon-GiWeightLiftingUp--active"
         >
           <GiWeightLiftingUp />
         </NavLink>
