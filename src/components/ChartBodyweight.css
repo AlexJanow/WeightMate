@@ -1,9 +1,9 @@
 .chart__bodyweight {
   background-color: var(--primaryBackground);
-
   padding: 0.5em;
-  margin: 0.5em;
+  margin: 0.5em auto;
   border-radius: 5px;
+  width: 100%;
 }
 
 .hasData {

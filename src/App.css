@@ -1,13 +1,11 @@
 .App {
   text-align: center;
-  padding: 4em 1.5em 0 1.5em;
+  padding: 4.5em 1.5em 0 1.5em;
   background: var(--primaryBackground);
   background-size: cover;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  overflow-y: hidden; /* Hide vertical scrollbar */
-  overflow-x: hidden; /* Hide horizontal scrollbar */
 }
 
 button:hover {

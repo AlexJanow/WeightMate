@@ -1,6 +1,6 @@
 import { Switch, Route } from "react-router";
 import "./Header.css";
-import { ReactComponent as Logo } from "../img/Logo.svg";
+
 export default function Header() {
   return (
     <header>

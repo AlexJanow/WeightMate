@@ -20,7 +20,7 @@ textarea {
   padding: 0.5em 1em 0.5em 1em;
 }
 .training__exercise-input {
-  width: 80vw;
+  width: 100%;
   padding: 0.5em 1em 0.5em 1em;
 }
 
@@ -37,13 +37,16 @@ textarea {
 .training__result-li {
   list-style: none;
   border: 1px solid var(--tertiaryLowOpacity);
-  padding: 5px;
+  padding: 10px 5px;
+
   margin: 5px;
   font-size: 1.2rem;
+  cursor: pointer;
 }
 
 .training__result-li:nth-child(odd) {
   background-color: var(--tertiaryLowOpacity);
+  border: 2px solid var(--tertiaryLowOpacity);
 }
 .training__result-li:hover {
   background-color: darkslategrey;

@@ -1,19 +1,20 @@
 .bodyweight__results-render-li {
   list-style: none;
-
   font-size: 1.2rem;
-  margin-top: 1em;
-  margin-bottom: 1em;
+  margin: 1em auto;
   width: fit-content;
 }
 
 .bodyweight__form-wrapper {
   display: flex;
   margin-bottom: 1em;
+  width: 100%;
 }
 
 .bodyweight__input {
-  border-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  border: none;
   font-size: 1.5rem;
   max-width: 60vw;
   padding: 0.5em 1em 0.5em 0;
@@ -27,8 +28,10 @@ textarea {
   background-color: var(--secondaryBackground);
   color: var(--secondary);
   padding: 0 1em 3px 1em;
-  border-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
   font-size: 2rem;
+  width: 100%;
 }
 
 .bodyweight__results-render-li:last-child {

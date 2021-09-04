@@ -21,11 +21,14 @@
 }
 .singleExercise__li {
   list-style: none;
+  cursor: pointer;
+  display: block;
 }
 
 .singleExercise__li :hover {
   font-weight: 900;
-  text-decoration: underline var(--primary);
+
+  background: var(--tertiaryLowOpacity);
 }
 
 .singleExercise__accordion {

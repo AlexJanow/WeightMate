@@ -19,6 +19,9 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "1.2rem",
     fontFamily: ['"Rubik'],
   },
+  variations: {
+    width: "100%",
+  },
 }));
 export default function SingleExercise() {
   const history = useHistory();

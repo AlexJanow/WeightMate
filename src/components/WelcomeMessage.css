@@ -3,7 +3,7 @@
   font-size: 3rem;
   font-weight: bold;
   text-align: left;
-  padding: 0.3em;
+  /* padding: 0.3em; */
   word-break: break-word;
   display: flex;
   flex-direction: column;
@@ -19,6 +19,7 @@
   font-size: 2.6rem;
   max-width: 60vw;
   border-radius: 5px;
+  padding-left: 0.5em;
 }
 .WelcomeMessage__input:focus {
   outline: none;

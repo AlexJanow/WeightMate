@@ -4,11 +4,17 @@
   background-color: var(--secondaryBackground);
   color: var(--secondary);
   border-radius: 5px;
-  padding: 1em;
   font-size: 1.2rem;
-  margin: 1em;
+  margin: 1em auto;
+  width: 100%;
+  gap: 1em;
 }
 
 .LogCard__wrapper li {
   list-style: none;
+  padding: 1em;
+}
+.LogCard__wrapper p {
+  max-width: 20ch;
+  margin: 1em auto;
 }

@@ -2,6 +2,7 @@
   background-color: var(--primaryBackground);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 0.5em;
-  margin: 0.5em;
+  margin: 0.5em auto;
   border-radius: 5px;
+  width: 100%;
 }
