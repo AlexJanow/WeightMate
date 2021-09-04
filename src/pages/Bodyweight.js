@@ -5,12 +5,26 @@ import BodyweightForm from "../components/BodyweightForm";
 import ChartBodyweight from "../components/ChartBodyweight";
 import { useState } from "react";
 import { getItemsFromLocalStorage } from "../utils/itemStorage";
+import "@hassanmojab/react-modern-calendar-datepicker/lib/DatePicker.css";
+import DatePicker from "@hassanmojab/react-modern-calendar-datepicker";
 
 export default function Bodyweight({ bwDataCheck }) {
-  const date = dayjs().format("DD/MM/YYYY");
+  const todayValue = {
+    day: parseInt(dayjs().format("DD")),
+    month: parseInt(dayjs().format("MM")),
+    year: parseInt(dayjs().format("YYYY")),
+  };
+  const [selectedDay, setSelectedDay] = useState(todayValue);
+
   const [bodyweightDataArray, setBodyweightDataArray] = useState(() => {
     const saved = getItemsFromLocalStorage("bodyweightDataArray");
-    return saved || [];
+
+    const sorted = saved.sort(function (a, b) {
+      a = a.date.split("/");
+      b = b.date.split("/");
+      return a[2] - b[2] || a[1] - b[1] || a[0] - b[0];
+    });
+    return sorted || [];
   });
 
   return (
@@ -20,10 +34,17 @@ export default function Bodyweight({ bwDataCheck }) {
         bwDataCheck={bwDataCheck}
       />
       <div className="bodyweight__container">
-        <div className="bodyweight__date">{date}</div>
+        {/* <div className="bodyweight__date">{date}</div> */}
+        <DatePicker
+          value={selectedDay}
+          onChange={setSelectedDay}
+          inputPlaceholder="Select a day"
+        />
+
         <BodyweightForm
           bodyweightDataArray={bodyweightDataArray}
           setBodyweightDataArray={setBodyweightDataArray}
+          selectedDay={selectedDay}
         />
       </div>
       <div className="bodyweight__data-container">
