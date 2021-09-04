@@ -5,6 +5,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-content: center;
+  background-color: var(--primaryBackground);
   color: var(--primary);
   width: 100%;
   z-index: 1000;
@@ -21,19 +22,26 @@ h1 {
 
 .Header__Logo {
   position: relative;
-  height: 80px;
-
+  font-size: 2rem;
   width: fit-content;
+  padding-left: 0.1em;
 }
 
-.Header__Logo-wrapper::before {
-  content: "";
-  position: absolute;
-  height: 160px;
-  width: 160px;
-  background: hsl(0, 0%, 50%);
-  border: 1px solid var(--primary);
-  border-radius: 50%;
-  top: -40px;
-  left: -40px;
+.Weight {
+  padding-top: 0.1em;
+  color: var(--primary);
+}
+.Weight::first-letter {
+  color: var(--tertiaryColor);
+}
+
+.Mate {
+  padding-bottom: 0.1em;
+  color: var(--primary);
+}
+.Mate::first-letter {
+  color: var(--tertiaryColor);
+}
+.Header__Logo-wrapper {
+  align-self: center;
 }

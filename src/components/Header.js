@@ -5,7 +5,8 @@ export default function Header() {
   return (
     <header>
       <div className="Header__Logo-wrapper">
-        <Logo className="Header__Logo" />
+        <h2 className="Header__Logo Weight">Weight</h2>
+        <h2 className="Header__Logo Mate">Mate</h2>
       </div>
       <Switch>
         <Route path="/bodyweight">
