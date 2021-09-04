@@ -38,6 +38,10 @@ textarea {
   font-size: 1.3em;
   color: var(--tertiaryColor);
   font-weight: bold;
+  line-height: 1.7em;
+  border: whitesmoke 1px solid;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .bodyweight__results-render-li:nth-child(odd) {

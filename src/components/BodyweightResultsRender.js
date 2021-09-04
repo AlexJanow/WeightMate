@@ -12,22 +12,30 @@ export default function BodyweightResultsRender({ bodyweightDataArray }) {
     return bwLogbook.slice(Math.max(bwLogbook.length - 10, 0)).map((data) => {
       return (
         <li key={data.id} className="bodyweight__results-render-li">
-          {data.date} - {data.weight} kg
-          {data.id === bwLogbook[bwLogbook.length - 1].id ? (
-            bwLogbook[bwLogbook.length - 2].weight < data.weight ? (
-              <>
-                {" "}
-                <ImArrowUpRight2 /> +
-                {data.weight - bwLogbook[bwLogbook.length - 2].weight} kg
-              </>
-            ) : (
-              <>
-                {" "}
-                <ImArrowDownRight2 /> -
-                {bwLogbook[bwLogbook.length - 2].weight - data.weight} kg
-              </>
-            )
-          ) : null}
+          {data?.date} - {data?.weight} kg
+          {data &&
+            bwLogbook.length > 1 &&
+            (data.id === bwLogbook[bwLogbook.length - 1].id ? (
+              bwLogbook[bwLogbook.length - 2].weight < data.weight ? (
+                <>
+                  <br />
+                  <ImArrowUpRight2 /> +
+                  {(
+                    data.weight - bwLogbook[bwLogbook.length - 2].weight
+                  ).toFixed(1)}{" "}
+                  kg
+                </>
+              ) : (
+                <>
+                  <br />
+                  <ImArrowDownRight2 /> -
+                  {(
+                    bwLogbook[bwLogbook.length - 2].weight - data.weight
+                  ).toFixed(1)}{" "}
+                  kg
+                </>
+              )
+            ) : null)}
           {/* {bwLogbook} */}
         </li>
       );

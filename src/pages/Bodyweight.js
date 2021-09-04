@@ -26,7 +26,7 @@ export default function Bodyweight({ bwDataCheck }) {
     });
     return sorted || [];
   });
-  console.log(selectedDay);
+
   return (
     <div className="bodyweight__wrapper">
       <ChartBodyweight
