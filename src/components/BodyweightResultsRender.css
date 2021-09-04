@@ -36,6 +36,8 @@ textarea {
 
 .bodyweight__results-render-li:last-child {
   font-size: 1.3em;
+  color: var(--tertiaryColor);
+  font-weight: bold;
 }
 
 .bodyweight__results-render-li:nth-child(odd) {

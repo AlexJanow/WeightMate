@@ -37,13 +37,13 @@
 }
 
 .bodyweight__date {
-  background-color: var(--secondaryBackground);
-  color: var(--secondary);
+  background-color: var(--secondaryBackground) !important;
+  color: var(--secondary) !important;
   font-size: 1.2rem !important;
   width: 40% !important;
   margin: auto !important;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   padding: 0.2em;
-  cursor: pointer;
+  cursor: pointer !important;
 }
