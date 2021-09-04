@@ -8,9 +8,10 @@
 
 body {
   margin: 0;
+
   position: relative;
   height: 100vh;
-
+  background: var(--primaryBackground);
   font-family: "Rubik", sans-serif;
 
   -webkit-font-smoothing: antialiased;
@@ -21,10 +22,10 @@ body {
   scrollbar-width: none; /* for Firefox */
   overflow-y: scroll;
 }
-body::-webkit-scrollbar {
-  display: none; /* for Chrome, Safari, and Opera */
-}
 
+::-webkit-scrollbar {
+  display: none;
+}
 /* Chrome, Safari, Edge, Opera */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
