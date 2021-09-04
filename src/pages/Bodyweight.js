@@ -26,7 +26,7 @@ export default function Bodyweight({ bwDataCheck }) {
     });
     return sorted || [];
   });
-
+  console.log(selectedDay);
   return (
     <div className="bodyweight__wrapper">
       <ChartBodyweight
@@ -34,11 +34,14 @@ export default function Bodyweight({ bwDataCheck }) {
         bwDataCheck={bwDataCheck}
       />
       <div className="bodyweight__container">
-        {/* <div className="bodyweight__date">{date}</div> */}
         <DatePicker
           value={selectedDay}
           onChange={setSelectedDay}
           inputPlaceholder="Select a day"
+          inputClassName="bodyweight__date"
+          formatInputText={() =>
+            `${selectedDay.day}/${selectedDay.month}/${selectedDay.year}`
+          }
         />
 
         <BodyweightForm
