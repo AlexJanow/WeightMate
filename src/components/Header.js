@@ -15,6 +15,9 @@ export default function Header() {
         <Route path="/training">
           <h1>Training</h1>
         </Route>
+        <Route path="/favourites">
+          <h1>Favourites</h1>
+        </Route>
         <Route path="/logbook">
           <h1>Logbook</h1>
         </Route>

@@ -114,3 +114,10 @@
 .singleExercise__repetition-table-label {
   font-size: 1.5rem;
 }
+
+.singleExercise__favToggle {
+  all: unset;
+}
+.singleExercise__favToggle-Icon {
+  font-size: 2rem;
+}

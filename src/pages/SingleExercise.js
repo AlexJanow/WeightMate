@@ -9,6 +9,7 @@ import TrainingInputForm from "../components/TrainingInputForm";
 import TrainingResultsRender from "../components/TrainingResultsRender";
 import { ToolTipsRepetitionCalculation } from "../utils/ToolTips";
 import { useHistory } from "react-router-dom";
+import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
@@ -23,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
   },
 }));
-export default function SingleExercise() {
+export default function SingleExercise({ addFavourite, favourites }) {
   const history = useHistory();
   const todayDate = dayjs().format("DD/MM/YYYY");
   const classes = useStyles();
@@ -96,9 +97,19 @@ export default function SingleExercise() {
       history.push("/training");
     }
   }, [addToTraining, todayDate, history]);
-
+  console.log(favourites);
   return (
     <div className="singleExercise__wrapper">
+      <button
+        className="singleExercise__favToggle"
+        onClick={() => addFavourite(exerciseId)}
+      >
+        {favourites.includes(exerciseId) ? (
+          <AiFillHeart className="singleExercise__favToggle-Icon" />
+        ) : (
+          <AiOutlineHeart className="singleExercise__favToggle-Icon" />
+        )}
+      </button>
       <div className="singleExercise__name">
         <h2>{exerciseData.name}</h2>
       </div>

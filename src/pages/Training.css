@@ -52,3 +52,17 @@ textarea {
   background-color: darkslategrey;
   font-size: 1.1rem;
 }
+
+.training__favourites-button {
+  font-size: 2rem;
+  font-weight: bold;
+  background-color: var(--secondaryBackground);
+  color: var(--secondary);
+  border: 1px solid var(--primary);
+  border-radius: 5px;
+  padding: 3px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 100%;
+  margin: auto;
+  cursor: pointer;
+}
