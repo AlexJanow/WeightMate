@@ -21,7 +21,7 @@
 }
 .bodyweight__input,
 textarea {
-  padding-left: 0.5rem;
+  padding-left: 1em;
 }
 .bodyweight__button {
   all: unset;
