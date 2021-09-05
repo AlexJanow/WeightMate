@@ -5,7 +5,8 @@ export default function Favourites() {
   const [favourites, setFavourites] = useState([]);
 
   const getFavsFromLocalStorage = () => {
-    setFavourites(JSON.parse(localStorage["favourites"]));
+    const saved = JSON.parse(localStorage.getItem("favourites")) || [];
+    setFavourites(saved);
   };
 
   useEffect(() => {

@@ -35,6 +35,7 @@ export default function TrainingForm() {
           type="text"
           name="exercise"
           placeholder="bench press,pull-up..."
+          autoComplete="off"
           required
           onChange={(e) => setSearch(e.target.value)}
           value={search}
