@@ -16,7 +16,8 @@
   border-top-left-radius: 5px;
   border: none;
   font-size: 1.5rem;
-  max-width: 60vw;
+  width: 85%;
+
   padding: 0.5em 1em 0.5em 0;
 }
 .bodyweight__input,
@@ -31,7 +32,8 @@ textarea {
   border-bottom-right-radius: 5px;
   border-top-right-radius: 5px;
   font-size: 2rem;
-  width: 100%;
+  width: 15%;
+  max-width: 5em;
 }
 
 .bodyweight__results-render-li:last-child {

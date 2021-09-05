@@ -40,10 +40,10 @@
   background-color: var(--secondaryBackground) !important;
   color: var(--secondary) !important;
   font-size: 1.2rem !important;
-  width: 40% !important;
+  width: 35% !important;
   margin: auto !important;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  border-radius: 5px 5px 0 0;
+  border: unset !important;
   padding: 0.2em;
   cursor: pointer !important;
 }
