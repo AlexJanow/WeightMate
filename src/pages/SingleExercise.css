@@ -71,6 +71,7 @@
 .pr {
   color: var(--primary);
   background-color: green;
+  border-radius: 5px;
 }
 .singleExercise__button-finish {
   all: unset;
