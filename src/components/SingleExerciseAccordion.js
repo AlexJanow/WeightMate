@@ -21,7 +21,7 @@ export default function SingleExerciseAccordion({ classes, exerciseData }) {
               <Typography className={classes.heading}>Description</Typography>
             </AccordionSummary>
             <AccordionDetails>
-              <Typography>
+              <Typography className={classes.description}>
                 {/* the regex below gets rid of the hmtl-tags, which the API delivers (for whatever reason) */}
                 {exerciseData &&
                   exerciseData.description.replace(/(<([^>]+)>)/gi, "")}

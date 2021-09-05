@@ -23,6 +23,9 @@ const useStyles = makeStyles((theme) => ({
   variations: {
     width: "100%",
   },
+  description: {
+    textAlign: "left",
+  },
 }));
 export default function SingleExercise({ addFavourite, favourites }) {
   const history = useHistory();
