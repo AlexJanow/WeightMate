@@ -97,14 +97,30 @@ export default function SingleExercise({ addFavourite, favourites }) {
       history.push("/training");
     }
   }, [addToTraining, todayDate, history]);
-  console.log(favourites);
+
+  const [favData, setFavData] = useState({
+    id: "",
+    name: "",
+  });
+  useEffect(() => {
+    setFavData({ id: exerciseId, name: exerciseName });
+  }, [exerciseName, exerciseId]);
+
+  const [isFavourited, setIsFavourited] = useState("");
+  const handleFavToggle = () => {
+    setIsFavourited(!isFavourited);
+  };
+
   return (
     <div className="singleExercise__wrapper">
       <button
         className="singleExercise__favToggle"
-        onClick={() => addFavourite(exerciseId)}
+        onClick={() => {
+          addFavourite(favData);
+          handleFavToggle();
+        }}
       >
-        {favourites.includes(exerciseId) ? (
+        {favourites.some((fav) => fav.id === exerciseId) ? (
           <AiFillHeart className="singleExercise__favToggle-Icon" />
         ) : (
           <AiOutlineHeart className="singleExercise__favToggle-Icon" />

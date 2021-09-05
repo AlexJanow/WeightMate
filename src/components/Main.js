@@ -5,8 +5,9 @@ import Logbook from "../pages/Logbook";
 import { Switch, Route } from "react-router";
 import "./Main.css";
 import SingleExercise from "../pages/SingleExercise";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Favourites from "../pages/Favourites";
+import { addItemtoLocalStorage } from "../utils/itemStorage";
 
 export default function Main() {
   const [favourites, setFavourites] = useState([]);
@@ -18,14 +19,18 @@ export default function Main() {
   };
   const addFavourite = (newFavourite) => {
     if (!favourites.includes(newFavourite)) {
-      setFavourites((favourites) => [...favourites, newFavourite]);
-    } else if (favourites.includes(newFavourite)) {
-      setFavourites(favourites.filter((favs) => favs !== newFavourite));
+      favourites.push(newFavourite);
+      addItemtoLocalStorage("favourites", favourites);
+    } else {
+      const indexFav = favourites.findIndex(
+        (favs) => favs.id === newFavourite.id
+      );
+
+      const withoutFav = favourites;
+      withoutFav.splice(indexFav, 1);
+      addItemtoLocalStorage("favourites", favourites);
     }
   };
-  useEffect(() => {
-    localStorage["favourites"] = JSON.stringify(favourites);
-  }, [favourites]);
 
   return (
     <main className="Main__content">

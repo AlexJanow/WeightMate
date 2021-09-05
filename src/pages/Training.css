@@ -38,7 +38,7 @@ textarea {
   list-style: none;
   border: 1px solid var(--tertiaryLowOpacity);
   padding: 10px 5px;
-
+  color: var(--primary);
   margin: 5px;
   font-size: 1.2rem;
   cursor: pointer;
@@ -63,6 +63,6 @@ textarea {
   padding: 3px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   width: 100%;
-  margin: auto;
+  margin: 1em auto;
   cursor: pointer;
 }
