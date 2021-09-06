@@ -1,3 +1,6 @@
+
+
+
 # My capstone project of <br>the Neue Fische - Bootcamp
 
 After 8 weeks of intense coding bootcamp I was challenged to make my own app as a capstone project in a timeframe of 4 weeks.
@@ -51,20 +54,23 @@ WeightMate was born
 
 ### 🎥 Showtime:
 
-<video width="400" height="720" controls>
-  <source src="./video/WeightMate.mp4" type="video/mp4">
-</video>
+https://user-images.githubusercontent.com/85886307/132209031-a6321047-ff2d-458c-8a77-20096e4d412e.mp4
 
 ### 📸 Pictures:
 
 ![](./src/img/HomeGreetingAndCharts.png)
+
 <br>
 ![](./src/img/BodyweightLog.png)
+
 <br>
 ![](./src/img/APISearch.png)
+
 <br>
 ![](./src/img/DescriptionAndVariation.png)
+
 <br>
 ![](./src/img/SingleExercise.png)
+
 <br>
 ![](./src/img/Logbook.png)
