@@ -32,4 +32,19 @@ WeightMate was born
 
 ### 🎉 Additional features:
 
--
+- home greets and also guides you to the inputs if it is your first time opening the app
+- depending on browser language the exercises are shown in english or german
+- exercises show description and variations
+- exercises are favorable and can be found in "Favourites" at the training page
+- after the first input of weights and repetitions a table gets calculated which gives you an Idea what weight to take for a certain repetition goal - very useful if you do powerlifting
+- you get your PR (Personal Record) shown after an actual worthy record input
+- tooltips, to give you an idea what is even happening
+
+### 🚧 Techstack:
+
+- HTML5
+- CSS3
+- JavaScript
+- React
+- React Router DOM
+- localStorage

@@ -39,6 +39,7 @@ export default function Bodyweight({ bwDataCheck }) {
           onChange={setSelectedDay}
           inputPlaceholder="Select a day"
           inputClassName="bodyweight__date"
+          calendarClassName="bodyweight__date-calendar"
           formatInputText={() =>
             `${selectedDay.day}/${selectedDay.month}/${selectedDay.year}`
           }
