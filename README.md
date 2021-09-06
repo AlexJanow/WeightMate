@@ -50,6 +50,7 @@ WeightMate was born
 - JavaScript
 - React
 - React Router DOM
+- ChartJS
 - localStorage
 
 ### 🎥 Showtime:
