@@ -59,18 +59,13 @@ https://user-images.githubusercontent.com/85886307/132209031-a6321047-ff2d-458c-
 ### 📸 Pictures:
 
 ![](./src/img/HomeGreetingAndCharts.png)
-
 <br>
 ![](./src/img/BodyweightLog.png)
-
 <br>
 ![](./src/img/APISearch.png)
-
 <br>
 ![](./src/img/DescriptionAndVariation.png)
-
 <br>
 ![](./src/img/SingleExercise.png)
-
 <br>
 ![](./src/img/Logbook.png)
