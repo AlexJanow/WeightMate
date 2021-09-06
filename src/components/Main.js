@@ -10,6 +10,7 @@ import Favourites from "../pages/Favourites";
 import { addItemtoLocalStorage } from "../utils/itemStorage";
 
 export default function Main() {
+  // eslint-disable-next-line no-unused-vars
   const [favourites, setFavourites] = useState([]);
 
   const [bodyweightChartDataExist, setBodyweightChartDataExist] =

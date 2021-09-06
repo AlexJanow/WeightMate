@@ -1,6 +1,7 @@
 .bodyweight__wrapper {
   display: flex;
   flex-direction: column;
+  padding-bottom: 10em;
 }
 
 .bodyweight__container {
@@ -10,6 +11,7 @@
   margin: auto;
   display: grid;
   grid-template-columns: 1fr;
+  z-index: 9999;
 }
 
 .bodyweight__data-container {
@@ -46,4 +48,8 @@
   border: unset !important;
   padding: 0.2em;
   cursor: pointer !important;
+}
+.bodyweight__date-calendar {
+  z-index: 9000 !important;
+  position: relative !important;
 }
