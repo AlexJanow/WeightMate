@@ -9,6 +9,7 @@ import TrainingInputForm from "../components/TrainingInputForm";
 import TrainingResultsRender from "../components/TrainingResultsRender";
 import { ToolTipsRepetitionCalculation } from "../utils/ToolTips";
 import { useHistory } from "react-router-dom";
+import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
@@ -16,9 +17,17 @@ const useStyles = makeStyles((theme) => ({
   },
   heading: {
     margin: "auto",
+    fontSize: "1.2rem",
+    fontFamily: ['"Rubik'],
+  },
+  variations: {
+    width: "100%",
+  },
+  description: {
+    textAlign: "left",
   },
 }));
-export default function SingleExercise() {
+export default function SingleExercise({ addFavourite, favourites }) {
   const history = useHistory();
   const todayDate = dayjs().format("DD/MM/YYYY");
   const classes = useStyles();
@@ -92,8 +101,34 @@ export default function SingleExercise() {
     }
   }, [addToTraining, todayDate, history]);
 
+  const [favData, setFavData] = useState({
+    id: "",
+    name: "",
+  });
+  useEffect(() => {
+    setFavData({ id: exerciseId, name: exerciseName });
+  }, [exerciseName, exerciseId]);
+
+  const [isFavourited, setIsFavourited] = useState("");
+  const handleFavToggle = () => {
+    setIsFavourited(!isFavourited);
+  };
+
   return (
     <div className="singleExercise__wrapper">
+      <button
+        className="singleExercise__favToggle"
+        onClick={() => {
+          addFavourite(favData);
+          handleFavToggle();
+        }}
+      >
+        {favourites.some((fav) => fav.id === exerciseId) ? (
+          <AiFillHeart className="singleExercise__favToggle-Icon" />
+        ) : (
+          <AiOutlineHeart className="singleExercise__favToggle-Icon" />
+        )}
+      </button>
       <div className="singleExercise__name">
         <h2>{exerciseData.name}</h2>
       </div>

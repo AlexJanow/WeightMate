@@ -1,38 +1,49 @@
 .bodyweight__results-render-li {
   list-style: none;
-
   font-size: 1.2rem;
-  margin-top: 1em;
-  margin-bottom: 1em;
+  margin: 1em auto;
   width: fit-content;
 }
 
 .bodyweight__form-wrapper {
   display: flex;
   margin-bottom: 1em;
+  width: 100%;
 }
 
 .bodyweight__input {
-  border-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  border: none;
   font-size: 1.5rem;
-  max-width: 60vw;
+  width: 85%;
+
   padding: 0.5em 1em 0.5em 0;
 }
 .bodyweight__input,
 textarea {
-  padding-left: 0.5rem;
+  padding-left: 1em;
 }
 .bodyweight__button {
   all: unset;
   background-color: var(--secondaryBackground);
   color: var(--secondary);
   padding: 0 1em 3px 1em;
-  border-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
   font-size: 2rem;
+  width: 15%;
+  max-width: 5em;
 }
 
 .bodyweight__results-render-li:last-child {
   font-size: 1.3em;
+  color: var(--tertiaryColor);
+  font-weight: bold;
+  line-height: 1.7em;
+  border: whitesmoke 1px solid;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .bodyweight__results-render-li:nth-child(odd) {

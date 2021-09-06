@@ -83,7 +83,7 @@ export default function ChartExercise({ exercisesExist }) {
           })}
         </select>
       )}
-      {exercises.length !== 0 && (
+      {exercises.length !== 0 && selectedExercise !== "" && (
         <Line
           className="chart__exercise"
           data={data}

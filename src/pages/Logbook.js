@@ -55,7 +55,7 @@ export default function Logbook() {
         <div>
           {" "}
           <h3 className="Logbook__exercise-info">
-            Finish exercises to add them to your workouts.
+            Finish exercises to add them to your Logbook.
           </h3>
           <Link className="Link" to="/training">
             <p className="Logbook__exercise-button">Exercises</p>

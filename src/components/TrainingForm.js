@@ -6,7 +6,7 @@ import { ToolTipsSearchExercise } from "../utils/ToolTips";
 export default function TrainingForm() {
   const [search, setSearch] = useState("");
   const [result, setResult] = useState("");
-  // const [selected, setSelected] = useState("")
+
   const suggestions = result.suggestions;
   const url = `https://wger.de/api/v2/exercise/search/?term=${search}`;
 
@@ -22,6 +22,9 @@ export default function TrainingForm() {
 
   return (
     <div className="training__exercise-form">
+      <Link to="/favourites">
+        <button className="training__favourites-button">Favourites</button>
+      </Link>
       <div className="training__wrapper">
         <ToolTipsSearchExercise />
         <label className="training__exercise-input-label" htmlFor="exercise">
@@ -32,6 +35,7 @@ export default function TrainingForm() {
           type="text"
           name="exercise"
           placeholder="bench press,pull-up..."
+          autoComplete="off"
           required
           onChange={(e) => setSearch(e.target.value)}
           value={search}

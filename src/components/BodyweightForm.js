@@ -1,16 +1,20 @@
 import { useState, useEffect } from "react";
-import dayjs from "dayjs";
 import addWeightToLocalStorage from "../utils/itemStorage";
 import { v4 as uuidv4 } from "uuid";
 export default function BodyweightForm({
   bodyweightDataArray,
   setBodyweightDataArray,
+  selectedDay,
 }) {
-  const date = dayjs().format("DD/MM/YY");
+  const [date, setDate] = useState("");
+
+  useEffect(() => {
+    setDate(`${selectedDay.day}/${selectedDay.month}/${selectedDay.year}`);
+  }, [selectedDay]);
 
   const [bodyweightData, setBodyweightData] = useState({
     id: "",
-    date,
+    date: "",
     weight: "",
   });
 
@@ -40,12 +44,12 @@ export default function BodyweightForm({
         className="bodyweight__input"
         name="bodyweight__input"
         required
-        // width="200"
         placeholder="bodyweight in kg"
         onChange={(e) =>
           setBodyweightData({
             ...bodyweightData,
             id: uuidv4(),
+            date: date,
             weight: e.target.value,
           })
         }

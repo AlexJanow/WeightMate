@@ -20,7 +20,7 @@ textarea {
   padding: 0.5em 1em 0.5em 1em;
 }
 .training__exercise-input {
-  width: 80vw;
+  width: 100%;
   padding: 0.5em 1em 0.5em 1em;
 }
 
@@ -37,15 +37,32 @@ textarea {
 .training__result-li {
   list-style: none;
   border: 1px solid var(--tertiaryLowOpacity);
-  padding: 5px;
+  padding: 10px 5px;
+  color: var(--primary);
   margin: 5px;
   font-size: 1.2rem;
+  cursor: pointer;
 }
 
 .training__result-li:nth-child(odd) {
   background-color: var(--tertiaryLowOpacity);
+  border: 2px solid var(--tertiaryLowOpacity);
 }
 .training__result-li:hover {
   background-color: darkslategrey;
   font-size: 1.1rem;
+}
+
+.training__favourites-button {
+  font-size: 2rem;
+  font-weight: bold;
+  background-color: var(--secondaryBackground);
+  color: var(--secondary);
+  border: 1px solid var(--primary);
+  border-radius: 5px;
+  padding: 3px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 100%;
+  margin: 1em auto;
+  cursor: pointer;
 }

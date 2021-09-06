@@ -11,22 +11,24 @@ export default function SingleExerciseAccordion({ classes, exerciseData }) {
   return (
     <div className="singleExercise__accordion">
       <Box display="flex" justifyContent="center" alignItems="center">
-        <Accordion className={classes.root}>
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls="panel1a-content"
-            id="panel1a-header"
-          >
-            <Typography className={classes.heading}>Description</Typography>
-          </AccordionSummary>
-          <AccordionDetails>
-            <Typography>
-              {/* the regex below gets rid of the hmtl-tags, which the API delivers (for whatever reason) */}
-              {exerciseData &&
-                exerciseData.description.replace(/(<([^>]+)>)/gi, "")}
-            </Typography>
-          </AccordionDetails>
-        </Accordion>
+        {exerciseData?.description?.length !== 0 && (
+          <Accordion className={classes.root}>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel1a-content"
+              id="panel1a-header"
+            >
+              <Typography className={classes.heading}>Description</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography className={classes.description}>
+                {/* the regex below gets rid of the hmtl-tags, which the API delivers (for whatever reason) */}
+                {exerciseData &&
+                  exerciseData.description.replace(/(<([^>]+)>)/gi, "")}
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+        )}
       </Box>
 
       <Box display="flex" justifyContent="center" alignItems="center">
@@ -39,16 +41,16 @@ export default function SingleExerciseAccordion({ classes, exerciseData }) {
             >
               <Typography className={classes.heading}>Variations</Typography>
             </AccordionSummary>
-            <AccordionDetails>
+            <AccordionDetails className={classes.variations}>
               <Typography className={classes.heading}>
                 {exerciseData &&
                   exerciseData.variations.map((exercise, index) => {
                     return (
-                      <li className="singleExercise__li" key={index}>
+                      <span className="singleExercise__li" key={index}>
                         <Link className="Link" to={`/training/${exercise}`}>
                           {exercise}
                         </Link>
-                      </li>
+                      </span>
                     );
                   })}
               </Typography>

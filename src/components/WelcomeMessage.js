@@ -91,6 +91,7 @@ export default function WelcomeMessage({ setUsernameExist }) {
               className="WelcomeMessage__input"
               type="text"
               name="name"
+              autoComplete="off"
               required
             />
           </div>

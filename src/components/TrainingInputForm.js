@@ -34,6 +34,7 @@ export default function TrainingInputForm({
         type="number"
         name="weight"
         placeholder="weight in kg"
+        autoComplete="off"
         required
       />
 
@@ -42,6 +43,7 @@ export default function TrainingInputForm({
         type="number"
         name="repetitions"
         placeholder="repetitions"
+        autoComplete="off"
         required
       />
       <button className="training__addSet-button">+</button>

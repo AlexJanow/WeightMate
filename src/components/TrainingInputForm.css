@@ -4,7 +4,6 @@
   grid-template-rows: 1fr 1fr;
   grid-gap: 1%;
   margin-bottom: 1em;
-  /* margin-top: 1em; */
   width: 80vw;
 }
 
@@ -16,6 +15,7 @@
   font-size: 1.5rem;
   max-width: 60vw;
   padding: 0.5em 1em 0.5em 1em;
+  border-radius: 5px 0 0 0;
 }
 
 .training__repetitions-input {
@@ -26,6 +26,7 @@
   font-size: 1.5rem;
   max-width: 60vw;
   padding: 0.5em 1em 0.5em 1em;
+  border-radius: 0 0 0 5px;
 }
 
 .training__addSet-button {
@@ -36,7 +37,7 @@
 
   padding-bottom: 3px;
 
-  border-radius: 5px;
+  border-radius: 0 5px 5px 0;
   font-size: 2rem;
 
   grid-column-start: 2;

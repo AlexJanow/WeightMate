@@ -21,11 +21,14 @@
 }
 .singleExercise__li {
   list-style: none;
+  cursor: pointer;
+  display: block;
 }
 
 .singleExercise__li :hover {
   font-weight: 900;
-  text-decoration: underline var(--primary);
+
+  background: var(--tertiaryLowOpacity);
 }
 
 .singleExercise__accordion {
@@ -68,6 +71,7 @@
 .pr {
   color: var(--primary);
   background-color: green;
+  border-radius: 5px;
 }
 .singleExercise__button-finish {
   all: unset;
@@ -110,4 +114,11 @@
 }
 .singleExercise__repetition-table-label {
   font-size: 1.5rem;
+}
+
+.singleExercise__favToggle {
+  all: unset;
+}
+.singleExercise__favToggle-Icon {
+  font-size: 2rem;
 }

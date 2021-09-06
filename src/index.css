@@ -8,15 +8,23 @@
 
 body {
   margin: 0;
+
   position: relative;
   height: 100vh;
-
+  background: var(--primaryBackground);
   font-family: "Rubik", sans-serif;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   display: flex;
   flex-direction: column;
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none; /* for Firefox */
+  overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 /* Chrome, Safari, Edge, Opera */
 input[type="number"]::-webkit-inner-spin-button,

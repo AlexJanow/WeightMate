@@ -4,6 +4,7 @@
   color: var(--primary);
   text-align: left;
   padding: 0.5em;
+  cursor: pointer;
 }
 
 .FirstInputs__choice-wrapper {
