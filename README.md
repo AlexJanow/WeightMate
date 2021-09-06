@@ -48,3 +48,23 @@ WeightMate was born
 - React
 - React Router DOM
 - localStorage
+
+### 🎥 Showtime:
+
+<video width="400" height="720" controls>
+  <source src="./video/WeightMate.mp4" type="video/mp4">
+</video>
+
+### 📸 Pictures:
+
+![](./src/img/HomeGreetingAndCharts.png)
+<br>
+![](./src/img/BodyweightLog.png)
+<br>
+![](./src/img/APISearch.png)
+<br>
+![](./src/img/DescriptionAndVariation.png)
+<br>
+![](./src/img/SingleExercise.png)
+<br>
+![](./src/img/Logbook.png)
