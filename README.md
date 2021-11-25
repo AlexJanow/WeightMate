@@ -10,7 +10,7 @@ After 8 weeks of intense coding bootcamp I was challenged to make my own app as 
 
 ## ❓ What is it about?
 
-As a passionate weightliter I always log not only my bodyweight but also all my workout weights and compare them to the last workout. But it gets kind of fiddly over time doing this on a notepad on my phone. <br>Also from my experience there is no better motivation than seeing progress. <br>
+As a passionate weightlifter I always log not only my bodyweight but also all my workout weights and compare them to the last workout. But it gets kind of fiddly over time doing this on a notepad on my phone. <br>Also from my experience there is no better motivation than seeing progress. <br>
 That is why I was thinking a lot about how to display the progress in a meaningful way.<br>
 But I am aware that specially for beginner it is also challenging to find the right exercises, so it was time for a good all-in-one solution:<br>
 WeightMate was born
